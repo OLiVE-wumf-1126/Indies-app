@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2020_05_31_241323) do
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "artistname", null: false
     t.string "youtube_url", null: false
     t.text "text", null: false
     t.string "flyer"
