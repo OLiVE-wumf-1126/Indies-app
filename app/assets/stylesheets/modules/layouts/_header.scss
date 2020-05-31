@@ -1,0 +1,35 @@
+.link{
+  color: white;
+  text-decoration: none;
+}
+.header{
+  background-color: black;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  &--logo{
+    background-color: burlywood;
+    height: 100%;
+    width: 170px;
+  }
+  &__menu{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &--left{
+      height: 100%;
+      width: 200px;
+      line-height: 60px;
+    }
+    &--right{
+      .header__lists-right{
+        display: flex;
+        li{
+          line-height: 60px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
