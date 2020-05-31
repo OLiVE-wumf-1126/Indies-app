@@ -4,8 +4,11 @@ class DeviseCreateArtists < ActiveRecord::Migration[5.2]
   def change
     create_table :artists do |t|
       ## Database authenticatable
+      t.string :artistname
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      t.text :profile
+      t.string :artistimage
 
       ## Recoverable
       t.string   :reset_password_token

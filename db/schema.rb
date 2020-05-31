@@ -10,7 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_31_041214) do
+ActiveRecord::Schema.define(version: 2020_05_31_111322) do
+
+  create_table "artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "artistname"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.text "profile"
+    t.string "artistimage"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_artists_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_artists_on_reset_password_token", unique: true
+  end
+
+  create_table "listeners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nickname"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.text "profile"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_listeners_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_listeners_on_reset_password_token", unique: true
+  end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "artistname", null: false
