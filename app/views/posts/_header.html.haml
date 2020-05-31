@@ -1,0 +1,27 @@
+.header
+  .header--logo
+  .header__menu
+    .header__menu--left
+      %ul.header__left-lists
+        %li.header__left-lists--first "seedについて"
+    .header__menu--right
+    - if user_signed_in? && artist_signed_in?
+      %ul.lists-right
+      - if user_signed_in?
+        %li.lists-right__login
+          = link_to "ログアウト", "#", method: :delete , class: "link"
+        %li.lists-right__signup
+          = link_to "マイページ", "#" , class: "link"
+      - elsif artist_signed_in?
+        %li.lists-right__login
+          = link_to "ログアウト", "#", method: :delete , class: "link"
+        %li.lists-right__signup
+          = link_to "マイページ", "#" , class: "link"
+    - else
+      %ul.lists-right
+        %li.lists-right__login
+          = link_to "リスナーログイン", "#" , class: "link"
+        %li.lists-right__login
+          = link_to "アーティストログイン", "#" , class: "link"
+        %li.lists-right__signup
+          = link_to "新規会員登録", "#" , class: "link"
