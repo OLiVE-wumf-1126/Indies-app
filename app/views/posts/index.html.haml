@@ -12,4 +12,8 @@
             = post.artist.email
           .index-post__content--text
             = post.text
+          - if artist_signed_in? && current_artist.id == post.artist_id
+            .index-post__content--edit
+              = link_to "編集", edit_post_path(post)
+              = link_to "削除", post_path(post), method: :delete
           %br
