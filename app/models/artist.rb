@@ -5,4 +5,8 @@ class Artist < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :posts
+
+  mount_uploader :artistimage, ImageUploader
+
+  
 end

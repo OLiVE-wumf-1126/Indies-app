@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   }
   root "posts#index"
   resources :posts
+  resources :artistshow, only: [:show]
+  resources :istenershow, only: [:show]
 end

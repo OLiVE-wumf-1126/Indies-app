@@ -4,6 +4,10 @@
       - @posts.each do |post|
         %li.index-post__content
           .index-post__content--artistimage
+            - if post.artist.artistimage?
+              = image_tag (post.artist.artistimage.url), size: "180x280"
+            - else
+              = image_tag "/assets/default.png", size: "180x280"
           .index-post__content--artistname
             = post.artist.email
           .index-post__content--text

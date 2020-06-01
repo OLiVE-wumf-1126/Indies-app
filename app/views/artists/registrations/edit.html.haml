@@ -3,6 +3,10 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
+    = f.label :artistname
+    %br/
+    = f.text_field :artistname
+  .field
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
@@ -28,6 +32,14 @@
     %i (we need your current password to confirm your changes)
     %br/
     = f.password_field :current_password, autocomplete: "current-password"
+  .field
+    = f.label :profile
+    %br/
+    = f.text_area :profile
+  .field
+    = f.label :artistimage
+    %br/
+    = f.file_field :artistimage
   .actions
     = f.submit "Update"
 %h3 Cancel my account

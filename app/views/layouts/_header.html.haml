@@ -12,12 +12,12 @@
             %li.lists-right__logout
               = link_to "ログアウト", destroy_listener_session_path, method: :delete , class: "link"
             %li.lists-right__mypage
-              = link_to "マイページ", "#" , class: "link"
+              = link_to "マイページ", listenershow_path(current_listener.id) , class: "link"
           - elsif artist_signed_in?
             %li.lists-right__logouts
               = link_to "ログアウト", destroy_artist_session_path , method: :delete , class: "link"
             %li.lists-right__mypage
-              = link_to "マイページ", "#" , class: "link"
+              = link_to "マイページ", artistshow_path(current_artist.id) , class: "link"
             %li.lists-right__post
               = link_to "投稿", new_post_path , class: "link"
       - else
