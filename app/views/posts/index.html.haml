@@ -4,6 +4,7 @@
       - @posts.each do |post|
         %li.index-post__content
           .index-post__content--artistimage
+            = link_to "", post_path(post)
             - if post.artist.artistimage?
               = image_tag (post.artist.artistimage.url), size: "180x280"
             - else

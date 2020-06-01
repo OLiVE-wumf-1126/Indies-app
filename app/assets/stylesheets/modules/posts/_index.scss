@@ -20,7 +20,15 @@
         &--artistimage{
           height: 180px;
           width: 280px;
+          position: relative;
           background-color: yellowgreen;
+        }
+        .index-post__content--artistimage a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height:100%;
+          width: 100%;
         }
       }
     }

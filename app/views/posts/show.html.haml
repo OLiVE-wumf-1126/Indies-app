@@ -3,9 +3,9 @@
     .show-post__content--youtube
       = @post.youtube_url
     .show-post__content--artistimage
-      = @post.artistimage
+      = image_tag (@post.artist.artistimage.url), size: "200x300"
     .show-post__content--title
-      = @post.title
+      -# = @post.title
     .show-post__text
       = @post.text
       
