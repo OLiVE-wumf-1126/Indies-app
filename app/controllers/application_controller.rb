@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  require './lib/artist_parameter_sanitizer'
+  require './lib/artist_parameter_sanitizer.rb'
   protected
  
   def devise_parameter_sanitizer
