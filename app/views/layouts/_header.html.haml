@@ -8,18 +8,18 @@
     .header__menu--right
       - if listener_signed_in? || artist_signed_in?
         %ul.header__lists-right
-        - if listener_signed_in?
-          %li.lists-right__logout
-            = link_to "ログアウト", destroy_listener_session_path, method: :delete , class: "link"
-          %li.lists-right__mypage
-            = link_to "マイページ", "#" , class: "link"
-        - elsif artist_signed_in?
-          %li.lists-right__logouts
-            = link_to "ログアウト", destroy_artist_session_path , method: :delete , class: "link"
-          %li.lists-right__mypage
-            = link_to "マイページ", "#" , class: "link"
-          %li.lists-right__post
-            = link_to "投稿", new_post_path , class: "link"
+          - if listener_signed_in?
+            %li.lists-right__logout
+              = link_to "ログアウト", destroy_listener_session_path, method: :delete , class: "link"
+            %li.lists-right__mypage
+              = link_to "マイページ", "#" , class: "link"
+          - elsif artist_signed_in?
+            %li.lists-right__logouts
+              = link_to "ログアウト", destroy_artist_session_path , method: :delete , class: "link"
+            %li.lists-right__mypage
+              = link_to "マイページ", "#" , class: "link"
+            %li.lists-right__post
+              = link_to "投稿", new_post_path , class: "link"
       - else
         %ul.header__lists-right
           %li.lists-right__login

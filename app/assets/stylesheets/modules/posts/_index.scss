@@ -1,0 +1,28 @@
+.index-content{
+  height: 100%;
+  width: 100%;
+  margin-top: 20px;
+  &__left{
+    margin: 0 20px;
+    height: 100%;
+    width: 70%;
+    background-color: wheat;
+    .index-post__lists{
+      height: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      .index-post__content{
+        width: 300px;
+        border: 1px solid #aaa;
+        text-align: center;
+        margin: 0 10px 10px 10px;
+        padding: 10px;
+        &--artistimage{
+          height: 180px;
+          width: 280px;
+          background-color: yellowgreen;
+        }
+      }
+    }
+  }
+}

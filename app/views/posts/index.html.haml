@@ -1,4 +1,11 @@
-- @posts.each do |post|
-  = post.artistname
-  = post.text
-  %br
+.index-content
+  .index-content__left
+    %ul.index-post__lists
+      - @posts.each do |post|
+        %li.index-post__content
+          .index-post__content--artistimage
+          .index-post__content--artistname
+            = post.artist.email
+          .index-post__content--text
+            = post.text
+          %br
