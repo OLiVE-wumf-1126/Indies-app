@@ -1,34 +1,48 @@
-.index-content{
+  .index-content{
   height: 100%;
   width: 100%;
   margin-top: 20px;
-  &__left{
-    margin: 0 20px;
+  &__center{
+    margin: 0 auto;
     height: 100%;
     width: 70%;
-    background-color: wheat;
     .index-post__lists{
       height: 300px;
       display: flex;
       flex-wrap: wrap;
       .index-post__content{
+        height: 300px;
         width: 300px;
-        border: 1px solid #aaa;
+        border: 4px double #ddd;
         text-align: center;
         margin: 0 10px 10px 10px;
         padding: 10px;
         &--artistimage{
-          height: 180px;
-          width: 280px;
+          height: 172px;
+          width: 272px;
+          line-height: 180px;
           position: relative;
           background-color: yellowgreen;
+        }
+        &--artistimage img{
+          height: 172px;
+          width: 272px;
+          object-fit: contain;
+          vertical-align: top;
         }
         .index-post__content--artistimage a {
           position: absolute;
           top: 0;
           left: 0;
           height:100%;
-          width: 100%;
+          width: 100%;  
+        }
+        &--artistname{
+          font-size: 20px;
+        }
+        &--text{
+          height: 50px;
+          text-align: left;
         }
       }
     }
