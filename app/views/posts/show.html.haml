@@ -3,9 +3,12 @@
     .show-post__content--youtube
       = @post.youtube_url
     .show-post__content--artistimage
-      = @post.artistimage
+      - if @post.artist.artistimage?
+        = image_tag (@post.artist.artistimage.url)
+      - else
+        = image_tag "/assets/default.png"
     .show-post__content--title
-      = @post.title
+      -# = @post.title
     .show-post__text
       = @post.text
       

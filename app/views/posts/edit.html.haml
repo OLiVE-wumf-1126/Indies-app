@@ -1,0 +1,5 @@
+= form_with model:@post, local: true do |f|
+  = f.text_field :youtube_url
+  = f.text_area :text
+  = f.text_field :flyer
+  = f.submit "投稿する"

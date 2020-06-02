@@ -1,15 +1,22 @@
 .index-content
-  .index-content__left
+  .index-content__center
     %ul.index-post__lists
       - @posts.each do |post|
         %li.index-post__content
           .index-post__content--artistimage
+            = link_to "", post_path(post)
             - if post.artist.artistimage?
-              = image_tag (post.artist.artistimage.url), size: "180x280"
+              = image_tag (post.artist.artistimage.url)
             - else
-              = image_tag "/assets/default.png", size: "180x280"
+              = image_tag "/assets/default.png"
           .index-post__content--artistname
             = post.artist.email
           .index-post__content--text
-            = post.text
+            = post.text.truncate(35)
+          - if artist_signed_in? && current_artist.id == post.artist_id
+            .index-post__content--edit
+              = link_to "編集", edit_post_path(post)
+              = link_to "削除", post_path(post), method: :delete
           %br
+  .index-content__right
+
