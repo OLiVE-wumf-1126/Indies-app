@@ -1,0 +1,67 @@
+@mixin field-input() {
+  width: 380px;
+  margin-top: 7px;
+  padding: 10px;
+  border: solid 1px  rgb(205, 205, 205);
+  border-radius: 4px;
+}
+@mixin span() {
+  font-size: 12px;
+  margin-left: 5px;
+  padding: 4px;
+  border-radius: 2px;
+  color: white;
+}
+.devise-registration{
+  height: 100%;
+  font-size: 15px;
+  &__main{
+    width: 700px;
+    margin: auto;
+    background-color: white;
+    &__top{
+      height: 100px;
+      width: 100%;
+      font-size: 25px;
+      font-weight: 600;
+      border-bottom:solid 1px rgb(205, 205, 205);
+      text-align: center;
+      line-height: 100px;
+      letter-spacing: 0.1em;
+    }
+    .user__form{
+      padding: 40px 150px;
+      .field{
+        margin-top: 30px;
+        &--title{
+          font-weight: 500;
+          line-height: 1em;
+        }
+        &--span{
+          @include span ();
+          background-color: rgb(255, 46, 46);
+        }
+        &--span--optional{
+          @include span ();
+          background-color: rgb(143, 143, 143);
+        }
+        .field-input{
+          @include field-input ();
+        }
+        label {
+          text-align: center;
+        }
+      }
+      .submit{
+        width: 380px;
+        font-size: 20px;
+        color: white;
+        margin-top: 50px;
+        padding: 10px;
+        border: none;
+        background-color: black;
+        letter-spacing: 0.5em;
+      }
+    }
+  }
+}

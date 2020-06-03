@@ -1,25 +1,28 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :artistname
-    %br/
-    = f.text_field :artistname
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "artists/shared/links"
+.devise-registration
+  .devise-registration__header
+  .devise-registration__main
+    .devise-registration__main__top 新規会員登録
+    = form_for(resource, as: resource_name, url: registration_path(resource_name),html: { class: "user__form" }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .field
+        %label.field--title アーティストネーム
+        %span.field--span 必須
+        %br/
+        = f.text_field :artistname, class: "field-input"
+      .field
+        %label.field--title メールアドレス
+        %span.field--span 必須
+        %br/
+        = f.email_field :email, autocomplete: "email", class: "field-input"
+      .field
+        %label.field--title パスワード
+        %span.field--span 必須
+        %br/
+        = f.password_field :password, autocomplete: "new-password", class: "field-input"
+      .field
+        %label.field--title 確認用パスワード
+        %span.field--span 必須
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: "field-input"
+      .actions
+        = f.submit "登録完了",class: "submit"
