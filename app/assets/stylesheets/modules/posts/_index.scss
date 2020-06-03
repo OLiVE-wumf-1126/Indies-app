@@ -1,19 +1,28 @@
-  .index-content{
-  height: 100%;
+
+.index-content{
+  height: 1000px;
   width: 100%;
-  margin-top: 20px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-image: image-url("live.jpg");
   &__center{
     margin: 0 auto;
+    padding-top: 20px;
     height: 100%;
     width: 70%;
+    background-color: rgba(255, 255, 255, 0.815);
     .index-post__lists{
       height: 300px;
       display: flex;
       flex-wrap: wrap;
+      padding-left: 8px;
       .index-post__content{
         height: 300px;
         width: 300px;
-        border: 4px double #ddd;
+        border: 4px double;
+        border-image: linear-gradient(90deg, #3a3a3a,#aaa, #3a3a3a) 1/4px 0 4px;
+        background-color: white;
         text-align: center;
         margin: 0 10px 10px 10px;
         padding: 10px;
@@ -39,10 +48,13 @@
         }
         &--artistname{
           font-size: 20px;
+          font-weight: bold;
+          @include title();
         }
         &--text{
           height: 50px;
           text-align: left;
+          @include text();
         }
       }
     }
