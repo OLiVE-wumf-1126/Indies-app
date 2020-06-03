@@ -1,2 +1,16 @@
-%h2=current_artist.artistname
+.artist-show__content
+  .artist-show__content__top
+    .artist-show__content__top--background{ style: "background-image: url(#{@artist.artistimage})"}
+  .artist-show__content__left
+    .artist-show__content__left--image
+      - if @artist.artistimage?
+        = image_tag (@artist.artistimage.url),size: "350x350"
+      - else
+        = image_tag "/assets/default.png"
+  .artist-show__content__right
+    .artist-show__content__right--title
+      ARTIST PROFILE
+    .artist-show__content__right--profile
+      %P= @artist.profile
+%h2=@artist.artistname
 = link_to "編集", edit_artist_registration_path

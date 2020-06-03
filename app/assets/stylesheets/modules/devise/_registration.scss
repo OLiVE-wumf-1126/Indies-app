@@ -1,17 +1,4 @@
-@mixin field-input() {
-  width: 380px;
-  margin-top: 7px;
-  padding: 10px;
-  border: solid 1px  rgb(205, 205, 205);
-  border-radius: 4px;
-}
-@mixin span() {
-  font-size: 12px;
-  margin-left: 5px;
-  padding: 4px;
-  border-radius: 2px;
-  color: white;
-}
+
 .devise-registration{
   height: 100%;
   font-size: 15px;
