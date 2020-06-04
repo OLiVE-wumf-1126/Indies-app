@@ -1,16 +1,21 @@
 .artist-show__content
   .artist-show__content__top
     .artist-show__content__top--background{ style: "background-image: url(#{@artist.artistimage})"}
+    .artist-show__content__top--artist
+      = @artist.artistname
   .artist-show__content__left
     .artist-show__content__left--image
       - if @artist.artistimage?
-        = image_tag (@artist.artistimage.url),size: "350x350"
+        = image_tag (@artist.artistimage.url),size: "300x300"
       - else
         = image_tag "/assets/default.png"
+    %ul.artist-show__menulist
+      %li= link_to "アーティスト情報編集", edit_artist_registration_path
+      %li= 1111
+      %li= 2222
+      %li= 3333
   .artist-show__content__right
     .artist-show__content__right--title
       ARTIST PROFILE
     .artist-show__content__right--profile
       %P= @artist.profile
-%h2=@artist.artistname
-= link_to "編集", edit_artist_registration_path

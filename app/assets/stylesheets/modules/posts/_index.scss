@@ -26,6 +26,9 @@
         text-align: center;
         margin: 0 10px 10px 10px;
         padding: 10px;
+        .index-post__content:hover{
+          border-image: linear-gradient(90deg, #ffc74e,rgb(218, 113, 64), #d138bd) 1/4px 0 4px;
+        }
         &--artistimage{
           height: 172px;
           width: 272px;
@@ -49,12 +52,12 @@
         &--artistname{
           font-size: 20px;
           font-weight: bold;
-          @include title();
+          color: $title;
         }
         &--text{
           height: 50px;
           text-align: left;
-          @include text();
+          color: $text;
         }
       }
     }

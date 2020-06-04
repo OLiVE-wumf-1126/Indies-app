@@ -1,12 +1,7 @@
 //▼▼主にpostで使用
-@mixin text() {
-  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
-  color: rgb(97, 97, 97);
-}
-@mixin title() {
-  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
-  color: rgb(43, 43, 43);
-}
+$text: rgb(97, 97, 97);
+$title: rgb(43, 43, 43);
+
 @mixin artist-icon(){
   width:  180px;
   height: 180px;
@@ -28,4 +23,7 @@
   padding: 4px;
   border-radius: 2px;
   color: white;
+}
+*{
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }

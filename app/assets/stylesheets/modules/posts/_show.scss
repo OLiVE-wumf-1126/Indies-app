@@ -16,9 +16,10 @@
       background-color: white;
       margin-top: 20px;
       padding: 20px;
-      @include text();
+      color: $text;
       .text-title{
         font-size: 20px;
+        color: $title;
         border-bottom: solid 1px darkgrey;
       }
     }
@@ -52,13 +53,17 @@
         padding: 10px 0 20px 0;
         font-size: 20px;
         font-weight: bold;
-        @include title();
+        color: $title;
       }
       &--image img{
         @include artist-icon();
       }
       &--link{
-
+        padding-top: 15px;
+        a{
+          color: $title;
+          text-decoration: none;
+        }
       }
     }
   }

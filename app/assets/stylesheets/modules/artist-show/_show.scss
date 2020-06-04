@@ -8,6 +8,7 @@
     width: 100%;
     display: table;
     overflow: hidden;
+    position: relative;
     &--background{
       height: 400px;
       background-size: cover;
@@ -16,27 +17,56 @@
       -webkit-filter: blur(10px);
       filter: blur(10px);
     }
+    &--background::before{
+      background-color: rgba(0,0,0,0.3);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: ' ';
+    }
+    &--artist{
+      height: 200px;
+      width: 600px;
+      position: absolute;
+      top: 300px;
+      left: 500px;
+      font-size: 30px;
+      color: white;
+    }
   }
   &__left{
-    height: 700px;
-    width: 400px;
+    height: 500px;
+    width: 350px;
     margin-left: 50px;
     background-color: white;
     position: absolute;
     top: 180px;
     box-shadow: 0px 0px 6px 4px rgba(53, 53, 53, 0.753);
     &--image{
-      padding-top: 20px;
+      padding: 20px 0;
       text-align: center;
+    }
+    .artist-show__menulist{
+      padding:20px;
+      li{
+        font-size: 17px;
+        margin-bottom: 15px;
+        a{
+          color: $title;
+          text-decoration: none;
+        }
+      }
     }
   }
   &__right{
     width: 60%;
-    margin: 20px 50px 20px 0;
+    margin: 20px 80px 20px 0;
     padding: 20px;
     background-color: white;
     float: right;
-    @include text();
+    color: $text;
     &--title{
       font-size: 20px;
       border-bottom: solid 1px darkgrey;
