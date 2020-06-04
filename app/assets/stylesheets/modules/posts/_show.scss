@@ -1,0 +1,70 @@
+.show-content{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-image: image-url("live.jpg");
+  &__left{
+    width: 65%;
+    padding: 20px;
+    .show-post__content__text{
+      width: 860px;
+      font-weight: lighter;
+      letter-spacing: .1em;
+      background-color: white;
+      margin-top: 20px;
+      padding: 20px;
+      color: $text;
+      .text-title{
+        font-size: 20px;
+        color: $title;
+        border-bottom: solid 1px darkgrey;
+      }
+    }
+  }
+  &__right{
+    width: 35%;
+    padding: 20px;
+    .show-post__content__comment{
+      height: 615px;
+      width: 100%;
+      background-color: blue;
+      &--form{
+        height: 50px;
+        width: 100%;
+        background-color: chartreuse;
+      }
+      &--board{
+        height: 440px;
+        margin-top: 10px;
+      }
+    }
+    .show-post__content__artist{
+      margin: 0 auto;
+      margin-top: 20px;
+      text-align:center;
+      height: 300px;
+      width: 70%;
+      border-radius:10px;
+      background-color: rgb(236, 236, 236);
+      &--title{
+        padding: 10px 0 20px 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: $title;
+      }
+      &--image img{
+        @include artist-icon();
+      }
+      &--link{
+        padding-top: 15px;
+        a{
+          color: $title;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

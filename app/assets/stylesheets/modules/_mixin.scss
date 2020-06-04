@@ -1,0 +1,29 @@
+//▼▼主にpostで使用
+$text: rgb(97, 97, 97);
+$title: rgb(43, 43, 43);
+
+@mixin artist-icon(){
+  width:  180px;
+  height: 180px;
+  border-radius: 50%;
+  background-position: left top;
+  display: inline-block;
+}
+//▼▼ deviseのフォームで
+@mixin field-input() {
+  width: 380px;
+  margin-top: 7px;
+  padding: 10px;
+  border: solid 1px  rgb(205, 205, 205);
+  border-radius: 4px;
+}
+@mixin span() {
+  font-size: 12px;
+  margin-left: 5px;
+  padding: 4px;
+  border-radius: 2px;
+  color: white;
+}
+*{
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+}

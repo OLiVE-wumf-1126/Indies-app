@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.includes(:artist).order("created_at DESC").page(params[:page]).per(6)
   end
 
   def show

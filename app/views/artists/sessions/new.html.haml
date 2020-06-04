@@ -1,17 +1,15 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "artists/shared/links"
+.devise-registration
+  .devise-registration__header
+  .devise-registration__main
+    .devise-registration__main__top アーティストログイン
+    = form_for(resource, as: resource_name, url: session_path(resource_name),html: { class: "user__form" }) do |f|
+      .field
+        %label.field--title メールアドレス
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "field-input"
+      .field
+        %label.field--title パスワード
+        %br/
+        = f.password_field :password, autocomplete: "current-password", class: "field-input"
+      .actions
+        = f.submit "ログイン",class: "submit"

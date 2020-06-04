@@ -1,5 +1,9 @@
 @import "modules/reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "modules/mixin";
 @import "modules/layouts/header";
 @import "modules/posts/index";
+@import "modules/posts/show";
+@import "modules/devise/registration";
+@import "modules/artist-show/show";

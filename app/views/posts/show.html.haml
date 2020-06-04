@@ -1,14 +1,24 @@
 .show-content
   .show-content__left
     .show-post__content--youtube
-      = @post.youtube_url
-    .show-post__content--artistimage
-      - if @post.artist.artistimage?
-        = image_tag (@post.artist.artistimage.url)
-      - else
-        = image_tag "/assets/default.png"
-    .show-post__content--title
-      -# = @post.title
-    .show-post__text
-      = @post.text
-      
+      %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "615", :src => "https://www.youtube.com/embed/#{@post.youtube_url.last(11)}", :width => "860"}
+    .show-post__content__text
+      .text-title
+        Artist comment...
+      .text-content
+        %p= @post.text
+  .show-content__right
+    .show-post__content__comment
+      .show-post__content__comment--form
+        コメント欄
+      .show-post__content__comment--board
+    .show-post__content__artist
+      .show-post__content__artist--title
+        PLAYING ARTIST
+      .show-post__content__artist--image
+        - if @post.artist.artistimage?
+          = image_tag (@post.artist.artistimage.url)
+        - else
+          = image_tag "/assets/default.png"
+      .show-post__content__artist--link
+        =link_to "PROFILE...",artistshow_path(@post.artist_id)
