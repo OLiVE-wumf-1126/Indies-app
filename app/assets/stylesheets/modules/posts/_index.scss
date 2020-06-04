@@ -2,45 +2,35 @@
 .index-content{
   height: 1000px;
   width: 100%;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-image: image-url("live.jpg");
   &__center{
-    margin: 0 auto;
     padding-top: 20px;
     height: 100%;
     width: 70%;
-    background-color: rgba(255, 255, 255, 0.815);
+    margin-left: 50px;
     .index-post__lists{
       height: 300px;
       display: flex;
       flex-wrap: wrap;
       padding-left: 8px;
       .index-post__content{
-        height: 300px;
-        width: 300px;
-        border: 4px double;
-        border-image: linear-gradient(90deg, #3a3a3a,#aaa, #3a3a3a) 1/4px 0 4px;
-        background-color: white;
+        height: 290px;
+        width: 292px;
         text-align: center;
         margin: 0 10px 10px 10px;
         padding: 10px;
-        .index-post__content:hover{
-          border-image: linear-gradient(90deg, #ffc74e,rgb(218, 113, 64), #d138bd) 1/4px 0 4px;
-        }
         &--artistimage{
-          height: 172px;
-          width: 272px;
+          height: 152px;
+          width: 252px;
+          margin: 0 auto;
           line-height: 180px;
           position: relative;
-          background-color: yellowgreen;
         }
         &--artistimage img{
-          height: 172px;
-          width: 272px;
-          object-fit: contain;
+          height: 152px;
+          width: 252px;
+          object-fit: cover;
           vertical-align: top;
+          border-radius: 20px;
         }
         .index-post__content--artistimage a {
           position: absolute;
@@ -51,7 +41,6 @@
         }
         &--artistname{
           font-size: 20px;
-          font-weight: bold;
           color: $title;
         }
         &--text{
@@ -59,6 +48,11 @@
           text-align: left;
           color: $text;
         }
+      }
+      .index-post__content:hover{
+        background-color: rgb(231, 231, 231);
+        transition: 0.5s ;
+
       }
     }
   }
