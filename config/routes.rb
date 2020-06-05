@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :artistshow, only: [:show]
   resources :listenershow, only: [:show]
+  resources :relationships, only: [:create, :destroy]
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_31_241323) do
+ActiveRecord::Schema.define(version: 2020_06_05_025831) do
 
   create_table "artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "artistname"
@@ -51,5 +51,17 @@ ActiveRecord::Schema.define(version: 2020_05_31_241323) do
     t.index ["artist_id"], name: "index_posts_on_artist_id"
   end
 
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "listener_id"
+    t.bigint "follow_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["follow_id"], name: "index_relationships_on_follow_id"
+    t.index ["listener_id", "follow_id"], name: "index_relationships_on_listener_id_and_follow_id", unique: true
+    t.index ["listener_id"], name: "index_relationships_on_listener_id"
+  end
+
   add_foreign_key "posts", "artists"
+  add_foreign_key "relationships", "listeners"
+  add_foreign_key "relationships", "listeners", column: "follow_id"
 end
