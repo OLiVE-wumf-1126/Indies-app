@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   }
   root "posts#index"
   resources :posts
-  resources :artistshow, only: [:show]
+  resources :artistshow, only: [:show] do
+    resource :followartists, only: [:create, :destroy]
+  end
   resources :listenershow, only: [:show]
+  resources :relationships, only: [:create, :destroy]
 end
