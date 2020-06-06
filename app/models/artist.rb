@@ -5,8 +5,11 @@ class Artist < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :posts
+  has_many :followartists
 
   mount_uploader :artistimage, ImageUploader
 
-  
+  def followartist_by?(listener)
+    followartists.where(listener_id: listener.id).exists?
+  end
 end

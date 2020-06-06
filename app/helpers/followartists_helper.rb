@@ -1,0 +1,2 @@
+module FollowartistsHelper
+end
