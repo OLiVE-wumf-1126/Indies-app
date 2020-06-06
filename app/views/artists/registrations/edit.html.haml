@@ -2,31 +2,32 @@
   .devise-registration__header
   .devise-registration__main
     .devise-registration__main__top 会員情報変更
-    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "user__form", method: :put }) do |f|
       = render "devise/shared/error_messages", resource: resource
       .field
         %label.field--title アーティストネーム
         %span.field--span 必須
         %br/
-        = f.text_field :artistname
+        = f.text_field :artistname, class: "field-input"
       .field
         %label.field--title メールアドレス
         %span.field--span 必須
         %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email"
+        = f.email_field :email, autocomplete: "email", class: "field-input"
       .field
         %label.field--title パスワード
         %span.field--span 必須
         %br/
-        = f.password_field :current_password, autocomplete: "current-password"
+        = f.password_field :current_password, autocomplete: "current-password", class: "field-input"
       .field
         %label.field--title プロフィール
         %br/
-        = f.text_area :profile
+        = f.text_area :profile, class: "field-input"
       .field
         %label.field--title アーティスト写真
         %br/
         = f.file_field :artistimage
       .actions
-        = f.submit "Update"
+        = f.submit "編集完了",class: "submit"
+
     = link_to "Back", :back
