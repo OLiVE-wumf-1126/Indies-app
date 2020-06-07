@@ -1,0 +1,29 @@
+.listener-show{
+  height: 400px;
+  box-shadow: 0px 0px 6px 4px rgba(53, 53, 53, 0.753);
+  .listener-show__title{
+    color: $title;
+    padding: 20px 0 20px 0;
+    text-align: center;
+  }
+  .listener-show__menulist{
+    font-size: 17px;
+    margin-bottom: 15px;
+    a{
+      padding-left: 10px;
+      color: $title;
+      text-decoration: none;
+    }
+    li{
+      height: 50px;
+      line-height: 50px;
+    }
+    li:hover{
+      background-color: $text;
+      a{
+        color: white;
+      }
+    }
+  }
+  
+}

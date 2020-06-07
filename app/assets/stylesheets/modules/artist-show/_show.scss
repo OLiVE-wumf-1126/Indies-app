@@ -49,13 +49,21 @@
       text-align: center;
     }
     .artist-show__menulist{
-      padding:20px;
       li{
+        height: 50px;
+        padding-left:20px;
         font-size: 17px;
+        line-height: 50px;
         margin-bottom: 15px;
         a{
           color: $title;
           text-decoration: none;
+        }
+      }
+      li:hover{
+        background-color: $text;
+        a{
+          color: white;
         }
       }
     }

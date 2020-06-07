@@ -20,4 +20,6 @@
           %br
   = paginate(@posts)
   .index-content__right
+    -if listener_signed_in?
+      = render "listenershow/show", listener: @listener
 
