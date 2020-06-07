@@ -13,6 +13,12 @@
             = post.artist.email
           .index-post__content--text
             = post.text.truncate(35)
+          - if listener_signed_in?
+            .index-post__content--favorites
+              -if post.favorited_by?(current_listener)
+                = link_to "★#{post.favorites.count}", post_favorites_path(post.id), method: :delete
+              - else 
+                = link_to "☆#{post.favorites.count}", post_favorites_path(post.id), method: :post
           - if artist_signed_in? && current_artist.id == post.artist_id
             .index-post__content--edit
               = link_to "編集", edit_post_path(post)

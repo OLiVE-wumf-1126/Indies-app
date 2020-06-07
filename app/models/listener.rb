@@ -11,6 +11,8 @@ class Listener < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :listener
   has_many :followartists
   has_many :followartist_artists, through: :followartists, source: :artist
+  has_many :favorites
+  has_many :favorite_posts, through: :favorites, source: :post
 
   def follow(other_listener)
     unless self == other_listener
