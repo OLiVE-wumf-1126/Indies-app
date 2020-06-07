@@ -1,0 +1,47 @@
+.post-new__content{
+  height: 100%;
+  width: 800px;
+  font-size: 15px;
+  margin: 0 auto;
+  &--top{
+    height: 150px;
+    line-height: 150px;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.1em;
+    border-bottom:solid 1px rgb(205, 205, 205);
+  }
+  &--main{
+    width: 100%;
+    .post_form{
+      padding: 40px 150px;
+      .post-field{
+        margin-top: 30px;
+        &--title{
+          font-weight: 500;
+          line-height: 1em;
+        }
+        &--span{
+          @include span ();
+          background-color: rgb(255, 46, 46);
+        }
+        .post-field-input{
+          @include post-field-input ();
+        }
+        .post-field-inputarea{
+          @include post-field-inputarea ();
+        }
+        label {
+          text-align: center;
+        }
+      }
+      .actions{
+        text-align: center;
+        .submit{
+          @include submit ();
+        }
+      }
+    }
+  }
+}

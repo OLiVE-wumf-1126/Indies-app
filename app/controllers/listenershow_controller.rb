@@ -1,6 +1,6 @@
 class ListenershowController < ApplicationController
   def show
     @listener = Listener.find(params[:id])
-    @followartists = @listener.followartists
+    @followartists = @listener.followartist_artists
   end
 end
