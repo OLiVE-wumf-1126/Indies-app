@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.includes(:artist).order("created_at DESC").page(params[:page]).per(6)
     @listener = current_listener
+    @followartists = @listener.followartist_artists
   end
 
   def show
