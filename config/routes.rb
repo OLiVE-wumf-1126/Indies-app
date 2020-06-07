@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     registrations: 'listeners/registrations'
   }
   root "posts#index"
-  resources :posts
+  resources :posts do
+    resource :favorites, only: [:create, :destroy]
+  end
   resources :artistshow, only: [:show] do
     resource :followartists, only: [:create, :destroy]
   end

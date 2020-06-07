@@ -9,3 +9,5 @@
     %li= link_to "フォローアーティスト一覧", "#"
   - @followartists.each do |follower|
     = follower.artistname
+  - @favorite_posts.each do |favorites|
+    = favorites.text
