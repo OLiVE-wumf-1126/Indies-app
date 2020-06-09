@@ -16,14 +16,25 @@
       %li= link_to "アーティスト情報編集", edit_artist_registration_path
       %li= 1111
       %li= 2222
-      %li= 3333
-  .artist-show__content__right
-    .artist-show__content__right--title
-      ARTIST PROFILE
-    .artist-show__content__right--profile
-      %P= @artist.profile
     - if listener_signed_in?
       -if @artist.followartist_by?(current_listener)
         = link_to "フォロー解除", artistshow_followartists_path(@artist.id), method: :delete
       - else
         = link_to "フォローする", artistshow_followartists_path(@artist.id), method: :post
+  .artist-show__content__right
+    .artist-show__content__right__top
+      .artist-show__content__right__top--title
+        ARTIST PROFILE
+      .artist-show__content__right--profile
+        %P= @artist.profile
+    .artist-show__content__right__bottom
+      .artist-show__content__right__bottom--posttitle
+        過去の投稿一覧
+      .artist-show__content__right__bottom__posts
+        - @posts.each do |post|
+          .artist-show__content__right__bottom__posts--text
+            = link_to "#{post.text.truncate(110)}", post_path(@artist)
+            %br
+            = post.created_at
+      
+      

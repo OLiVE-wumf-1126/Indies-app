@@ -69,15 +69,42 @@
     }
   }
   &__right{
-    width: 60%;
-    margin: 20px 80px 20px 0;
-    padding: 20px;
-    background-color: white;
+    width: 65%;
+    margin: 20px 40px 20px 0;
     float: right;
-    color: $text;
-    &--title{
-      font-size: 20px;
-      border-bottom: solid 1px darkgrey;
+    &__top{
+      width: 100%;
+      padding: 20px;
+      background-color: white;
+      float: right;
+
+      &--title{
+        font-size: 20px;
+        color: $title;
+        border-bottom: solid 1px darkgrey;
+      }
+    }
+    &__bottom{
+      width: 100%;
+      margin-top: 30px;
+      padding: 20px;
+      background-color: white;
+      float: right;
+      &--posttitle{
+        font-size: 20px;
+        color: $title;
+        border-bottom: solid 1px darkgrey;
+      }
+      &__posts{
+        color: $text;
+        padding: 10px 0;
+        &--text{
+          a{
+            color: $title;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
 }
