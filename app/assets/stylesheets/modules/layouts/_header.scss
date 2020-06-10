@@ -24,18 +24,10 @@
     }
     &--right{
       height: 100%;
-      width: 350px;
       display: flex;
       color: white;
-      &--post{
-        width: 200px;
-
-        line-height: 60px;
-        text-align: right;
-        letter-spacing: 0.1em;
-      }
       ul.header__lists{
-        width: 50%;
+        width: 190px;
         text-align: center;
         li.dropdown-btn{
           line-height: 60px;
@@ -50,6 +42,8 @@
           ul.dropdown{
             line-height: 60px;
             display:none;
+            position:relative;
+            z-index:100;
             li{
               background:#666;
             }

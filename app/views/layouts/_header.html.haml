@@ -7,8 +7,6 @@
           = link_to "seedについて", "#", class: "link"
     .header__menu--right
       - if listener_signed_in? || artist_signed_in?
-        .header__menu--right--post
-          = link_to "投稿", new_post_path , class: "link"
         %ul.header__lists
           %li.dropdown-btn
             %a.toggle メニュー
@@ -16,14 +14,14 @@
               %ul.dropdown
                 %li.lists-logout
                   = link_to "ログアウト", destroy_listener_session_path, method: :delete , class: "link"
-                %li.lists-mypage
-                  = link_to "マイページ", listenershow_path(current_listener.id) , class: "link"
             - elsif artist_signed_in?
               %ul.dropdown
                 %li.lists-logout
                   = link_to "ログアウト", destroy_artist_session_path , method: :delete , class: "link"
                 %li.lists-mypage
                   = link_to "マイページ", artistshow_path(current_artist.id) , class: "link"
+                %li.lists-post
+                  = link_to "投稿", new_post_path , class: "link"
       - else
         %ul.header__lists
           %li.dropdown-btn

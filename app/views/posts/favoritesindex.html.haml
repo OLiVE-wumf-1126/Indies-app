@@ -1,0 +1,24 @@
+.favoritesindex-title
+  ="#{current_listener.nickname}さんのいいね！投稿一覧"
+.index-content
+  .index-content__center
+    %ul.index-post__lists
+      - @favorites.each do |favorite|
+        %li.index-post__content
+          .index-post__content--artistimage
+            = link_to "", post_path(favorite)
+            - if favorite.artist.artistimage?
+              = image_tag (favorite.artist.artistimage.url)
+            - else
+              = image_tag "/assets/default.png"
+          .index-post__content--artistname
+            = favorite.artist.email
+          .index-post__content--text
+            = favorite.text.truncate(35)
+          - if listener_signed_in?
+            .index-post__content--favorites
+          %br
+  = paginate(@favorites)
+  .index-content__right
+    -if listener_signed_in?
+      = render "listenershow/show", listener: @listener, followartists: @followartists

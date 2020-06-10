@@ -41,6 +41,15 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def favoritesindex
+    @favorites = current_listener.favorite_posts.order("created_at DESC").page(params[:page]).per(6)
+    @listener = current_listener
+    if listener_signed_in?
+      @followartists = @listener.followartist_artists
+      @favorite_posts = @listener.favorite_posts
+    end
+  end
+
   private
   def post_params
     params.require(:post).permit(:youtube_url, :text, :flyer).merge(artist_id: current_artist.id)
