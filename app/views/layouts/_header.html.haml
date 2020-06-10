@@ -7,26 +7,31 @@
           = link_to "seedについて", "#", class: "link"
     .header__menu--right
       - if listener_signed_in? || artist_signed_in?
-        %ul.header__lists-right
-          - if listener_signed_in?
-            %li.lists-right__logout
-              = link_to "ログアウト", destroy_listener_session_path, method: :delete , class: "link"
-            %li.lists-right__mypage
-              = link_to "マイページ", listenershow_path(current_listener.id) , class: "link"
-          - elsif artist_signed_in?
-            %li.lists-right__logouts
-              = link_to "ログアウト", destroy_artist_session_path , method: :delete , class: "link"
-            %li.lists-right__mypage
-              = link_to "マイページ", artistshow_path(current_artist.id) , class: "link"
-            %li.lists-right__post
-              = link_to "投稿", new_post_path , class: "link"
+        %ul.header__lists
+          %li.dropdown-btn
+            %a.toggle メニュー
+            - if listener_signed_in?
+              %ul.dropdown
+                %li.lists-logout
+                  = link_to "ログアウト", destroy_listener_session_path, method: :delete , class: "link"
+            - elsif artist_signed_in?
+              %ul.dropdown
+                %li.lists-logout
+                  = link_to "ログアウト", destroy_artist_session_path , method: :delete , class: "link"
+                %li.lists-mypage
+                  = link_to "マイページ", artistshow_path(current_artist.id) , class: "link"
+                %li.lists-post
+                  = link_to "投稿", new_post_path , class: "link"
       - else
-        %ul.header__lists-right
-          %li.lists-right__login
-            = link_to "リスナーログイン", new_listener_session_path , class: "link"
-          %li.lists-right__login
-            = link_to "アーティストログイン", new_artist_session_path , class: "link"
-          %li.lists-right__signup
-            = link_to "新規会員登録", new_artist_registration_path , class: "link"
-          %li.lists-right__signup
-            = link_to "新規会員登録", new_listener_registration_path , class: "link"
+        %ul.header__lists
+          %li.dropdown-btn
+            %a.toggle ログイン
+            %ul.dropdown
+              %li= link_to "リスナー", new_listener_session_path , class: "link"
+              %li= link_to "アーティスト", new_artist_session_path , class: "link"
+        %ul.header__lists
+          %li.dropdown-btn
+            %a.toggle 新規登録
+            %ul.dropdown
+              %li= link_to "リスナー新規登録", new_listener_registration_path , class: "link"
+              %li= link_to "アーティスト新規登録", new_artist_registration_path , class: "link"

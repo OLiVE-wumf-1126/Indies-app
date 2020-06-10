@@ -52,3 +52,6 @@ $title: rgb(43, 43, 43);
 *{
   font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }
+a:hover{
+  border-bottom: solid 1px $text;
+}

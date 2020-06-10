@@ -1,4 +1,12 @@
-
+.favoritesindex-title{
+  height: 50px;
+  width: 70%;
+  font-size: 20px;
+  color: $title;
+  text-align: center;
+  padding-top: 20px;
+  margin-left: 50px;
+}
 .index-content{
   height: 1000px;
   width: 100%;
@@ -49,6 +57,12 @@
           height: 50px;
           text-align: left;
           color: $text;
+        }
+        &--favorites{
+          a{
+            text-decoration: none;
+            color: $text;
+          }
         }
       }
       .index-post__content:hover{

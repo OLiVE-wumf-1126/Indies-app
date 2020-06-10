@@ -23,11 +23,31 @@
       line-height: 60px;
     }
     &--right{
-      .header__lists-right{
-        display: flex;
-        li{
+      height: 100%;
+      display: flex;
+      color: white;
+      ul.header__lists{
+        width: 190px;
+        text-align: center;
+        li.dropdown-btn{
           line-height: 60px;
-          margin-right: 10px;
+          position:relative;
+          color: white;
+          a{
+            letter-spacing: 0.1em;
+          }
+          .toggle{
+            cursor: pointer;
+          }
+          ul.dropdown{
+            line-height: 60px;
+            display:none;
+            position:relative;
+            z-index:100;
+            li{
+              background:#666;
+            }
+          }
         }
       }
     }

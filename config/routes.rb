@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root "posts#index"
   resources :posts do
     resource :favorites, only: [:create, :destroy]
+    get :favoritesindex, on: :collection
   end
   resources :artistshow, only: [:show] do
     resource :followartists, only: [:create, :destroy]

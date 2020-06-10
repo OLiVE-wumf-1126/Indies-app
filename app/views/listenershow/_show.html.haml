@@ -5,9 +5,13 @@
     = @listener.nickname 
     さん
   %ul.listener-show__menulist
-    %li= link_to "ユーザー編集", edit_listener_registration_path
-    %li= link_to "フォローアーティスト一覧", "#"
-  - @followartists.each do |follower|
-    = follower.artistname
-  - @favorite_posts.each do |favorites|
-    = favorites.text
+    %li.listener-show__menulist--listeneredit
+      = link_to "ユーザー編集", edit_listener_registration_path
+    %li.listener-show__menulist--favorites
+      = link_to "いいね", favoritesindex_posts_path
+    %li.listener-show__menulist--followartists
+      %a.toggle フォローアーティスト一覧
+      %ul.followartists-name
+        - @followartists.each do |follower|
+          %li= link_to "#{follower.artistname.truncate(10)}",artistshow_path(follower.id)
+    
