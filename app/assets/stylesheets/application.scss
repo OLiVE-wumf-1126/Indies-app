@@ -2,7 +2,9 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/mixin";
+@import "modules/kaminari";
 @import "modules/layouts/header";
+@import "modules/layouts/footer";
 @import "modules/posts/index";
 @import "modules/posts/show";
 @import "modules/posts/new";

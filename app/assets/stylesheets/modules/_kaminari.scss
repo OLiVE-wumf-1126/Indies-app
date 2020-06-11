@@ -1,0 +1,73 @@
+.index-paginate{
+  height: 50px;
+  width: 70%;
+  margin-left: 50px;
+  .pagination{
+    display: flex;
+    padding-left: 350px;
+    .current.page-info{
+      width: 30px;
+      background-color: $title;
+      @include info ();
+      .pagecurrent{
+        line-height: 30px;
+        color: white;
+      }
+    }
+    .page-info{
+      width: 30px;
+      @include info ();
+      .page{
+        line-height: 30px;
+        a{
+          text-decoration: none;
+          color: $title;
+        }
+      }
+    }
+    .first-info{
+      width: 60px;
+      @include info ();
+      .first{
+        line-height: 30px;
+        a{
+          text-decoration: none;
+          color: $title;
+        }
+      }
+    }
+    .prev-info{
+      width: 30px;
+      @include info ();
+      .prev{
+        line-height: 30px;
+        a{
+          text-decoration: none;
+          color: $title;
+        }
+      }
+    }
+    .next-info{
+      width: 30px;
+      @include info ();
+      .next{
+        line-height: 30px;
+        a{
+          text-decoration: none;
+          color: $title;
+        }
+      }
+    }
+    .last-info{
+      width: 60px;
+      @include info ();
+      .last{
+        line-height: 30px;
+        a{
+          text-decoration: none;
+          color: $title;
+        }
+      }
+    }
+  }
+}

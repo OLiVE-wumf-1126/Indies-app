@@ -25,7 +25,6 @@
               = link_to "編集", edit_post_path(post)
               = link_to "削除", post_path(post), method: :delete
           %br
-  = paginate(@posts)
   .index-content__right
     -if listener_signed_in?
       = render "listenershow/show", listener: @listener, followartists: @followartists
@@ -38,5 +37,5 @@
         .artist-signedin--text
           アーティスト新規登録はこちら
         = link_to "", new_artist_registration_path
-      
-
+.index-paginate
+  = paginate(@posts)
