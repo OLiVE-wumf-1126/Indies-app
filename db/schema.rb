@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_07_080336) do
+ActiveRecord::Schema.define(version: 2020_06_11_133234) do
 
   create_table "artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "artistname"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 2020_06_07_080336) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_artists_on_email", unique: true
     t.index ["reset_password_token"], name: "index_artists_on_reset_password_token", unique: true
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "listener_id"
+    t.bigint "post_id"
+    t.text "comment", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listener_id"], name: "index_comments_on_listener_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -79,6 +89,8 @@ ActiveRecord::Schema.define(version: 2020_06_07_080336) do
     t.index ["listener_id"], name: "index_relationships_on_listener_id"
   end
 
+  add_foreign_key "comments", "listeners"
+  add_foreign_key "comments", "posts"
   add_foreign_key "favorites", "listeners"
   add_foreign_key "favorites", "posts"
   add_foreign_key "followartists", "artists"

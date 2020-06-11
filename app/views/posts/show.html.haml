@@ -10,8 +10,17 @@
   .show-content__right
     .show-post__content__comment
       .show-post__content__comment--form
-        コメント欄
+        = form_with model:[@post,@comment], local: true do |f|
+          = f.text_field :comment, placeholder: "コメントする", class: "comment-input"
+          = f.submit "SEND", class: "comment-submit"
       .show-post__content__comment--board
+        - if @comments
+          - @comments.each do |comment|
+            .board--nickname
+              = comment.listener.nickname.truncate(10)
+              = date_format(comment.created_at)
+            .board--comment
+              = comment.comment
     .show-post__content__artist
       .show-post__content__artist--title
         PLAYING ARTIST
