@@ -33,7 +33,7 @@
       .artist-show__content__right__bottom__posts
         - @posts.each do |post|
           .artist-show__content__right__bottom__posts--text
-            = link_to "#{post.text.truncate(110)}", post_path(@artist)
+            = link_to "#{post.text.truncate(106)}", post_path(@artist)
             %br
             = post.created_at
       
