@@ -49,6 +49,17 @@ $title: rgb(43, 43, 43);
   border-radius: 2px;
   color: white;
 }
+@mixin back-ground-option() {
+  background-size: cover;
+  background-position: center;
+}
+@mixin all-link-option() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:100%;
+  width: 100%;
+}
 *{
   font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
 }
