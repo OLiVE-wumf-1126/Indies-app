@@ -34,6 +34,17 @@ $title: rgb(43, 43, 43);
   background-color: black;
   letter-spacing: 0.5em;
 }
+@mixin back-ground-option() {
+  background-size: cover;
+  background-position: center;
+}
+@mixin all-link-option() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:100%;
+  width: 100%;
+}
 //▼▼ deviseのフォームで
 @mixin field-input() {
   width: 100%;
@@ -49,6 +60,16 @@ $title: rgb(43, 43, 43);
   border-radius: 2px;
   color: white;
 }
+//▼▼ kaminariで
+@mixin info() {
+  height: 30px;
+  border-radius: 15px;;
+  text-align: center;
+  margin: 0 10px;
+}
 *{
   font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+}
+a:hover{
+  border-bottom: solid 1px $text;
 }

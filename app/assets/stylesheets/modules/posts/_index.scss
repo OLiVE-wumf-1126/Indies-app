@@ -1,4 +1,17 @@
-
+.favoritesindex-title{
+  height: 50px;
+  width: 70%;
+  font-size: 20px;
+  color: $title;
+  text-align: center;
+  padding-top: 20px;
+  margin-left: 50px;
+}
+.index__top{
+  height: 430px;
+  width: 100%;
+  @include back-ground-option ();
+}
 .index-content{
   height: 1000px;
   width: 100%;
@@ -35,11 +48,7 @@
           border-radius: 20px;
         }
         .index-post__content--artistimage a {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height:100%;
-          width: 100%;  
+          @include all-link-option ();
         }
         &--artistname{
           font-size: 20px;
@@ -50,6 +59,12 @@
           text-align: left;
           color: $text;
         }
+        &--favorites{
+          a{
+            text-decoration: none;
+            color: $text;
+          }
+        }
       }
       .index-post__content:hover{
         background-color: rgb(231, 231, 231);
@@ -58,9 +73,44 @@
     }
   }
   &__right{
-    padding-top: 20px;
-    width: 20%;
+    margin-top: 20px;
+    width: 25%;
     height: 100%;
-    margin-right: 50px;
+    &__listener-signedin{
+      height: 200px;
+      width: 300px;
+      text-align: right;
+      color: white;
+      margin: 0 0 10px 30px;
+      position: relative;
+      @include back-ground-option ();
+      .listener-signedin--text{
+        font-size: 20px;
+        position: absolute;
+        top: 150px;
+        left: 30px;
+      }
+    }
+    &__listener-signedin a{
+      @include all-link-option ();
+    }
+    &__artist-signedin{
+      height: 200px;
+      width: 300px;
+      text-align: right;
+      color: white;
+      margin: 0 0 10px 30px;
+      position: relative;
+      @include back-ground-option ();
+      .artist-signedin--text{
+        font-size: 20px;
+        position: absolute;
+        top: 150px;
+        left: 10px;
+      }
+    }
+    &__artist-signedin a{
+      @include all-link-option ();
+    }
   }
 }
