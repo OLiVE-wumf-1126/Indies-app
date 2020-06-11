@@ -2,10 +2,6 @@
   height: 100%;
   width: 100%;
   display: flex;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-image: image-url("live.jpg");
   &__left{
     width: 65%;
     padding: 20px;
@@ -13,7 +9,6 @@
       width: 860px;
       font-weight: lighter;
       letter-spacing: .1em;
-      background-color: white;
       margin-top: 20px;
       padding: 20px;
       color: $text;
@@ -30,15 +25,35 @@
     .show-post__content__comment{
       height: 615px;
       width: 100%;
-      background-color: blue;
       &--form{
         height: 50px;
         width: 100%;
-        background-color: chartreuse;
+        .comment-input{
+          width: 350px;
+          height: 40px;
+          padding: 10px;
+          border: solid 1px  rgb(205, 205, 205);
+          border-radius: 4px;
+        }
+        .comment-submit{
+          height: 40px;
+          width: 70px;
+          background-color: rgb(205, 205, 205);
+          border-radius: 4px;
+          border: none;
+        }
+
       }
       &--board{
         height: 440px;
         margin-top: 10px;
+        font-size: 15px;
+        .board--nickname{
+          color: $title;
+        }
+        .board--comment{
+          color: $text;
+        }
       }
     }
     .show-post__content__artist{
