@@ -1,8 +1,7 @@
 .artist-show__content{
-  height: 1000px;
+  height: 100%;
   width: 100%;
   position: relative;
-  background-color: rgb(238, 238, 238);
   &__top{
     height: 400px;
     width: 100%;
@@ -11,8 +10,7 @@
     position: relative;
     &--background{
       height: 400px;
-      background-size: cover;
-      background-position: center;
+      @include back-ground-option ();
       margin : -10px;
       -webkit-filter: blur(10px);
       filter: blur(10px);
@@ -96,12 +94,16 @@
         border-bottom: solid 1px darkgrey;
       }
       &__posts{
+        height: 70px;
         color: $text;
-        padding: 10px 0;
+        margin: 10px;
+        position: relative;
         &--text{
+          padding-top: 20px;
           a{
             color: $title;
             text-decoration: none;
+            @include all-link-option ();
           }
         }
       }
