@@ -1,11 +1,11 @@
+.artist-show__top
+  - if @artist.artistimage?
+    .artist-show__top--background{ style: "background-image: url(#{@artist.artistimage})"}
+  - else 
+    .artist-show__top--background
+  .artist-show__top--artist
+    = @artist.artistname
 .artist-show__content
-  .artist-show__content__top
-    - if @artist.artistimage?
-      .artist-show__content__top--background{ style: "background-image: url(#{@artist.artistimage})"}
-    - else 
-      .artist-show__content__top--background
-    .artist-show__content__top--artist
-      = @artist.artistname
   .artist-show__content__left
     .artist-show__content__left--image
       - if @artist.artistimage?
@@ -21,6 +21,7 @@
         = link_to "フォロー解除", artistshow_followartists_path(@artist.id), method: :delete
       - else
         = link_to "フォローする", artistshow_followartists_path(@artist.id), method: :post
+
   .artist-show__content__right
     .artist-show__content__right__top
       .artist-show__content__right__top--title
@@ -36,5 +37,5 @@
             = link_to "#{post.text.truncate(110)}", post_path(@artist)
             %br
             = post.created_at
-      
-      
+      .index-paginate
+        = paginate(@posts)
