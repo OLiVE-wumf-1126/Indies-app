@@ -54,7 +54,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:youtube_url, :text, :tag_list).merge(artist_id: current_artist.id)
+    params.require(:post).permit(:youtube_url, :text, :title, :tag_list).merge(artist_id: current_artist.id)
   end
 
 end
