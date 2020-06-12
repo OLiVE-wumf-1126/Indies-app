@@ -7,8 +7,8 @@
           = link_to "seedについて", "#", class: "link"
     .search_wap
       = search_form_for @search, url: search_posts_path do |f|
-        = f.text_field :text_cont , placeholder: "何かお探しですか？", class: 'input'
-        = button_tag type: 'submit', class: 'search__button'
+        = f.text_field :text_or_title_cont , placeholder: "キーワード検索", class: 'input'
+        = f.submit "検索", class: 'search__submit'
     .header__menu--right
       - if listener_signed_in? || artist_signed_in?
         %ul.header__lists
