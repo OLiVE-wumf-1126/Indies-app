@@ -69,3 +69,5 @@ gem 'mini_magick'
 gem 'haml-rails'
 gem 'kaminari'
 gem 'jquery-rails'
+gem "jquery-ui-rails"
+gem 'acts-as-taggable-on', '~> 6.0'

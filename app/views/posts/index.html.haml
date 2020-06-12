@@ -22,6 +22,8 @@
                 = link_to "☆#{post.favorites.count}", post_favorites_path(post.id), method: :post
           - if artist_signed_in? && current_artist.id == post.artist_id
             .index-post__content--edit
+              - post.tag_list.each do |tag|
+                = tag 
               = link_to "編集", edit_post_path(post)
               = link_to "削除", post_path(post), method: :delete
           %br
