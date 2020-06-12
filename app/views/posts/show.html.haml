@@ -2,6 +2,8 @@
   .show-content__left
     .show-post__content--youtube
       %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "615", :src => "https://www.youtube.com/embed/#{@post.youtube_url.last(11)}", :width => "860"}
+    .show-post__content__title
+      = @post.title
     .show-post__content__tag
       タグ：
       - @post.tag_list.each do |tag|

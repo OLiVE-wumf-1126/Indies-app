@@ -5,6 +5,13 @@
   &__left{
     width: 65%;
     padding: 20px;
+    .show-post__content__title{
+      height: 40px;
+      width: 100%;
+      font-size: 27px;
+      color: $title;
+      margin-bottom: 10px;
+    }
     .show-post__content__tag{
       height: 30px;
       width: 860px;
