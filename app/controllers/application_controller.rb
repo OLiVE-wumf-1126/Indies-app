@@ -13,10 +13,9 @@ class Artist::ParameterSanitizer < Devise::ParameterSanitizer
     permit(:account_update, keys: [:artistname, :email, :artistimage, :profile])
   end
 end
-
-
-
 class ApplicationController < ActionController::Base
+  before_action :set_search
+
   def devise_parameter_sanitizer
     if resource_class == Artist
       Artist::ParameterSanitizer.new(Artist, :artist, params)
@@ -26,4 +25,10 @@ class ApplicationController < ActionController::Base
       super
     end
   end
+
+  def set_search
+    @search = Post.ransack(params[:q]) #ransackの検索メソッド
+    @search_posts = @search.result(distinct: true).order(created_at: "DESC").includes(:artist).page(params[:page]).per(5) # productsの検索結果一覧 
+  end
+
 end

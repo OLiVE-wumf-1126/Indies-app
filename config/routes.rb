@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   }
   root "posts#index"
   resources :posts do
+    collection do
+      get :search
+    end
     resource :comments, only: [:create]
     resource :favorites, only: [:create, :destroy]
     get :favoritesindex, on: :collection
