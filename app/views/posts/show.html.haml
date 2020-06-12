@@ -2,6 +2,11 @@
   .show-content__left
     .show-post__content--youtube
       %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "615", :src => "https://www.youtube.com/embed/#{@post.youtube_url.last(11)}", :width => "860"}
+    .show-post__content__tag
+      タグ：
+      - @post.tag_list.each do |tag|
+        .show-post__content__tag--content
+          = tag
     .show-post__content__text
       .text-title
         Artist comment...
@@ -10,9 +15,12 @@
   .show-content__right
     .show-post__content__comment
       .show-post__content__comment--form
-        = form_with model:[@post,@comment], local: true do |f|
-          = f.text_field :comment, placeholder: "コメントする", class: "comment-input"
-          = f.submit "SEND", class: "comment-submit"
+        - if listener_signed_in?
+          = form_with model:[@post,@comment], local: true do |f|
+            = f.text_field :comment, placeholder: "コメントする", class: "comment-input"
+            = f.submit "SEND", class: "comment-submit"
+        - else
+          《 コメント一覧 》
       .show-post__content__comment--board
         - if @comments
           - @comments.each do |comment|

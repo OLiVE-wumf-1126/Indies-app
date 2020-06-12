@@ -9,6 +9,9 @@
         %br 
         = f.text_field :youtube_url, class: "post-field-input"
       .post-field
+        %label.post-field--title タグ
+        = f.text_field :tag_list, value: @post.tag_list.join(','), class: "post-field-input"
+      .post-field
         %label.post-field--title 投稿コメント
         %span.post-field--span 必須
         %br

@@ -5,6 +5,21 @@
   &__left{
     width: 65%;
     padding: 20px;
+    .show-post__content__tag{
+      height: 30px;
+      width: 860px;
+      display: flex;
+      line-height: 30px;
+      &--content{
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        margin-right: 14px;
+        display: inline-block;
+        border: solid 1px $title;
+        border-radius: 5px;
+      }
+    }
     .show-post__content__text{
       width: 860px;
       font-weight: lighter;
