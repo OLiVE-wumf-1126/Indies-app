@@ -22,6 +22,14 @@
       width: 200px;
       line-height: 60px;
     }
+    &--search{
+      height: 100%;
+      line-height: 60px;
+      .search-input{
+        width: 300px;
+        border-radius: 5px;
+      }
+    }
     &--right{
       height: 100%;
       display: flex;

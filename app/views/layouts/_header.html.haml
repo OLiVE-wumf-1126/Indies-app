@@ -5,10 +5,10 @@
       %ul.header__left-lists
         %li.header__left-lists--first
           = link_to "seedについて", "#", class: "link"
-    .search_wap
+    .header__menu--search
       = search_form_for @search, url: search_posts_path do |f|
-        = f.text_field :text_or_title_cont , placeholder: "キーワード検索", class: 'input'
-        = f.submit "検索", class: 'search__submit'
+        = f.text_field :text_or_title_cont , placeholder: "キーワード検索", class: 'search-input'
+        = f.submit "検索", class: 'search-submit'
     .header__menu--right
       - if listener_signed_in? || artist_signed_in?
         %ul.header__lists
