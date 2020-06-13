@@ -3,26 +3,33 @@
   .devise-registration__main
     .devise-registration__main__top アーティスト新規登録
     = form_for(resource, as: resource_name, url: registration_path(resource_name),html: { class: "user__form" }) do |f|
-      = render "devise/shared/error_messages", resource: resource
       .field
         %label.field--title アーティストネーム
         %span.field--span 必須
         %br/
         = f.text_field :artistname, class: "field-input"
+        - if resource.errors.include?(:artistname)
+          %p.field-error= resource.errors.full_messages_for(:artistname).first
       .field
         %label.field--title メールアドレス
         %span.field--span 必須
         %br/
         = f.email_field :email, autocomplete: "email", class: "field-input"
+        - if resource.errors.include?(:email)
+          %p.field-error= resource.errors.full_messages_for(:email).first
       .field
         %label.field--title パスワード
         %span.field--span 必須
         %br/
         = f.password_field :password, autocomplete: "new-password", class: "field-input"
+        - if resource.errors.include?(:password)
+          %p.field-error= resource.errors.full_messages_for(:password).first
       .field
         %label.field--title 確認用パスワード
         %span.field--span 必須
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password", class: "field-input"
+        - if resource.errors.include?(:password_confirmation)
+          %p.field-error= resource.errors.full_messages_for(:password_confirmation).first
       .actions
         = f.submit "登録完了",class: "submit"
