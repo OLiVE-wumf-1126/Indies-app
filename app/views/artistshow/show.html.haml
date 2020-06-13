@@ -12,16 +12,16 @@
         = image_tag (@artist.artistimage.url),size: "300x300"
       - else
         = image_tag "/assets/default.png"
-    %ul.artist-show__menulist
-      %li= link_to "アーティスト情報編集", edit_artist_registration_path
-      %li= 1111
-      %li= 2222
+    %ul.artist-show__content__left__menulist
+      %li= link_to "アーティスト情報編集", edit_artist_registration_path, class: "artist-show__menulist--edit"
+      %li= "フォロワー数：#{@artist.followartists.count}"
+      %li= "投稿数：#{@artist.posts.count}"
     - if listener_signed_in?
-      -if @artist.followartist_by?(current_listener)
-        = link_to "フォロー解除", artistshow_followartists_path(@artist.id), method: :delete
-      - else
-        = link_to "フォローする", artistshow_followartists_path(@artist.id), method: :post
-
+      .artist-show__content__left--follow
+        - if @artist.followartist_by?(current_listener)
+          = link_to "フォロー解除", artistshow_followartists_path(@artist.id), method: :delete
+        - else
+          = link_to "フォローする", artistshow_followartists_path(@artist.id), method: :post
   .artist-show__content__right
     .artist-show__content__right__top
       .artist-show__content__right__top--title

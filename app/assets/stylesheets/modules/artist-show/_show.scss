@@ -1,41 +1,24 @@
-
 .artist-show__top{
   height: 400px;
   width: 100%;
   display: table;
   overflow: hidden;
   position: relative;
-  &__top{
+  &--background{
     height: 400px;
-    width: 100%;
-    display: table;
-    overflow: hidden;
-    position: relative;
-    &--background{
-      height: 400px;
-      @include back-ground-option ();
-      margin : -10px;
-      -webkit-filter: blur(10px);
-      filter: blur(10px);
-    }
-    &--background::before{
-      background-color: rgba(0,0,0,0.3);
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      content: ' ';
-    }
-    &--artist{
-      height: 200px;
-      width: 600px;
-      position: absolute;
-      top: 300px;
-      left: 500px;
-      font-size: 30px;
-      color: white;
-    }
+    @include back-ground-option ();
+    margin : -10px;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+  }
+  &--background::before{
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: ' ';
   }
   &--artist{
     height: 200px;
@@ -48,7 +31,7 @@
   }
 }
 .artist-show__content{
-  height: 100vh;
+  height: 1000px;
   width: 100%;
   .artist-show__content__left{
     height: 500px;
@@ -62,24 +45,29 @@
       padding: 20px 0;
       text-align: center;
     }
-    .artist-show__menulist{
+    &__menulist{
       li{
         height: 50px;
         padding-left:20px;
         font-size: 17px;
         line-height: 50px;
         margin-bottom: 15px;
+        color: $title;
         a{
           color: $title;
           text-decoration: none;
         }
       }
-      li:hover{
-        background-color: $text;
-        a{
-          color: white;
-        }
-      }
+    }
+    &--follow{
+      margin: 0 auto;
+      height: 25px;
+      width: 110px;
+      text-align: center;
+      @include link-button();
+    }
+    &--follow:hover{
+      @include link-button-hover();
     }
   }
   .artist-show__content__right{
@@ -124,8 +112,5 @@
         }
       }
     }
-  }
-  .artistshowpaginate{
-    height: 500px;
   }
 }

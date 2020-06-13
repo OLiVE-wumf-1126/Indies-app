@@ -20,6 +20,12 @@
                 = link_to "★#{post.favorites.count}", post_favorites_path(post.id), method: :delete
               - else 
                 = link_to "☆#{post.favorites.count}", post_favorites_path(post.id), method: :post
+          - else
+            .index-post__content--favorites
+              - if post.favorites.count == 0
+                = "☆#{post.favorites.count}"
+              - else
+                = "★#{post.favorites.count}"
           - if artist_signed_in? && current_artist.id == post.artist_id
             .index-post__content--edit
               = link_to "編集", edit_post_path(post)

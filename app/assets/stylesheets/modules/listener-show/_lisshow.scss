@@ -44,17 +44,17 @@
         cursor: pointer;
       }
       .followartists-name{
-        height: 140px;
-        display:none;
-        z-index:10;
-        background-color: rgb(223, 223, 223);
-        background-color: white;
+        height: 300px;
         overflow: scroll;
-        a{
-          color: $text;
-          text-decoration: none;
-          cursor: pointer;
+        li{
+          border-bottom: solid 1px $text;
+          a{
+            color: $text;
+            text-decoration: none;
+            cursor: pointer;
+          }
         }
+        
       }
     }
   }

@@ -39,5 +39,13 @@
           = image_tag (@post.artist.artistimage.url)
         - else
           = image_tag "/assets/default.png"
+      .show-post__content__artist--date
+        = "フォロワー数：#{@post.artist.followartists.count}"
+      - if listener_signed_in?
+        .show-post__content__artist--follow
+          - if @post.artist.followartist_by?(current_listener)
+            = link_to "フォロー解除", artistshow_followartists_path(@post.artist.id), method: :delete
+          - else
+            = link_to "フォローする", artistshow_followartists_path(@post.artist.id), method: :post
       .show-post__content__artist--link
-        =link_to "PROFILE...",artistshow_path(@post.artist_id)
+        =link_to "PROFILE",artistshow_path(@post.artist_id)

@@ -1,10 +1,10 @@
 .index-paginate{
   height: 50px;
   width: 70%;
-  margin-left: 50px;
+  margin: 0 auto;
   .pagination{
     display: flex;
-    padding-left: 350px;
+    justify-content: center;
     .current.page-info{
       width: 30px;
       background-color: $title;
