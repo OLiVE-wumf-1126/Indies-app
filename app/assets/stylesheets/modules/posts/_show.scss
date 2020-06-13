@@ -80,7 +80,7 @@
     }
     .show-post__content__artist{
       margin: 0 auto;
-      margin-top: 20px;
+      padding-top: 20px;
       text-align:center;
       height: 500px;
       width: 60%;
@@ -90,10 +90,26 @@
         color: $title;
         border-bottom: solid 1px darkgrey;
       }
-      &--image img{
-        margin-top: 20px;
-        text-align:center;
-        @include artist-icon();
+      &--image{
+        margin-top: 40px;
+        img{
+          text-align:center;
+          @include artist-icon();
+        }
+      }
+      &--date{
+        margin-top: 50px;
+      }
+      &--follow{
+        margin: 0 auto;
+        margin-top: 50px;
+        height: 25px;
+        width: 110px;
+        text-align: center;
+        @include link-button();
+      }
+      &--follow:hover{
+        @include link-button-hover();
       }
       &--link{
         margin: 0 auto;

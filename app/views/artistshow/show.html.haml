@@ -18,7 +18,7 @@
       %li= "投稿数：#{@artist.posts.count}"
     - if listener_signed_in?
       .artist-show__content__left--follow
-        -if @artist.followartist_by?(current_listener)
+        - if @artist.followartist_by?(current_listener)
           = link_to "フォロー解除", artistshow_followartists_path(@artist.id), method: :delete
         - else
           = link_to "フォローする", artistshow_followartists_path(@artist.id), method: :post
