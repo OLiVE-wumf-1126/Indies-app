@@ -47,14 +47,16 @@
           vertical-align: top;
           border-radius: 20px;
         }
-        .index-post__content--artistimage a {
+        &--artistimage a {
           @include all-link-option ();
         }
         &--artistname{
-          font-size: 20px;
+          margin: 10px 0;
+          font-size: 17px;
           color: $title;
         }
         &--text{
+          font-size: 15px;
           height: 50px;
           text-align: left;
           color: $text;
