@@ -72,3 +72,4 @@ gem 'jquery-rails'
 gem "jquery-ui-rails"
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'ransack'
+gem 'rails-i18n'
