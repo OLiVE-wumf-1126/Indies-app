@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :listener_action, only:[:create]
+  before_action :listener_action
+
   def create
     comment = Comment.create(comment_params)
     redirect_back(fallback_location: root_path)
@@ -11,6 +12,6 @@ class CommentsController < ApplicationController
     end
     
     def listener_action
-      redirect_to root_path unless listener_signed_in?
+      redirect_back(fallback_location: root_path) unless listener_signed_in?
     end
 end

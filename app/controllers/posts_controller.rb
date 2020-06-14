@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :listener_action, only:[:favoritesindex]
 
   def index
-    @posts = Post.includes(:artist).order("created_at DESC").page(params[:page]).per(6)
+    @posts = Post.includes(:artist).order("created_at DESC").page(params[:page]).per(9)
     @listener = current_listener
     if listener_signed_in?
       @followartists = @listener.followartist_artists
@@ -13,8 +13,10 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comment = Comment.new
-    @comments = @post.comments.includes(:listener)
+    if listener_signed_in?
+      @comment = Comment.new
+      @comments = @post.comments.includes(:listener)
+    end
   end
 
   def new
@@ -50,7 +52,7 @@ class PostsController < ApplicationController
   end
 
   def favoritesindex
-    @favorites = current_listener.favorite_posts.order("created_at DESC").page(params[:page]).per(6)
+    @favorites = current_listener.favorite_posts.order("created_at DESC").page(params[:page]).per(9)
     @listener = current_listener
     if listener_signed_in?
       @followartists = @listener.followartist_artists
