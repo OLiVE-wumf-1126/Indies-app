@@ -45,7 +45,7 @@
           width: 252px;
           object-fit: cover;
           vertical-align: top;
-          border-radius: 20px;
+          border-radius: 5px;
         }
         &--artistimage a {
           @include all-link-option ();
@@ -63,6 +63,13 @@
         }
         &--favorites{
           float: left;
+          color: $text;
+          a{
+            text-decoration: none;
+            color: $text;
+          }
+        }
+        &--edit{
           color: $text;
           a{
             text-decoration: none;
