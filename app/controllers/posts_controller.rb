@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  before_action :artist_action, except:[:index, :show]
+  before_action :listener_action, only:[:favoritesindex]
+
   def index
     @posts = Post.includes(:artist).order("created_at DESC").page(params[:page]).per(6)
     @listener = current_listener
@@ -6,7 +9,6 @@ class PostsController < ApplicationController
       @followartists = @listener.followartist_artists
       @favorite_posts = @listener.favorite_posts
     end
-    
   end
 
   def show
@@ -64,4 +66,11 @@ class PostsController < ApplicationController
     params.require(:post).permit(:youtube_url, :text, :title, :tag_list).merge(artist_id: current_artist.id)
   end
 
+  def artist_action
+    redirect_to root_path unless artist_signed_in?
+  end
+
+  def listener_action
+    redirect_to root_path unless listener_signed_in?
+  end
 end

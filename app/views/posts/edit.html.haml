@@ -8,7 +8,7 @@
         %span.post-field--span 必須
         %br 
         = f.text_field :title, class: "post-field-input"
-         -if @post.errors.include?(:title)
+        -if @post.errors.include?(:title)
           %p.field-error= @post.errors.full_messages_for(:title).first
       .post-field
         %label.post-field--title YouTubeアドレス
