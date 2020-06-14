@@ -1,9 +1,9 @@
 FactoryBot.define do
 
   factory :listener do
-    nickname {"testユーザーさん"}
+    nickname {"testリスナーさん"}
     email {"hoge@hoge.jp"}
-    password {"abcd1234"}
-    password_confirmation {"abcd1234"}
+    password {"hoge369hoge"}
+    password_confirmation {"hoge369hoge"}
   end
 end
