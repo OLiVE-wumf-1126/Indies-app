@@ -6,6 +6,6 @@ FactoryBot.define do
     password {"hoge369hoge"}
     password_confirmation {"hoge369hoge"}
     profile {"アーティストです"}
-    artistimage {File.open("#{Rails.root}/app/assets/images/artist.jpeg")}
+    # artistimage {File.open("#{Rails.root}/app/assets/images/artist.jpeg")}
   end
 end
