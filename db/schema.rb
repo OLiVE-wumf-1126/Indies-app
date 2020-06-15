@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_14_144053) do
+ActiveRecord::Schema.define(version: 2020_06_14_182105) do
 
   create_table "artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "artistname", null: false
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_06_14_144053) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "youtube_url", null: false
     t.text "text", null: false
-    t.string "title"
+    t.string "title", null: false
     t.bigint "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
