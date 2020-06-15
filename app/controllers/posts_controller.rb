@@ -4,8 +4,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:artist).order("created_at DESC").page(params[:page]).per(9)
-    @listener = current_listener
     if listener_signed_in?
+      @listener = current_listener
       @followartists = @listener.followartist_artists
       @favorite_posts = @listener.favorite_posts
     end
@@ -53,8 +53,8 @@ class PostsController < ApplicationController
 
   def favoritesindex
     @favorites = current_listener.favorite_posts.order("created_at DESC").page(params[:page]).per(9)
-    @listener = current_listener
     if listener_signed_in?
+      @listener = current_listener
       @followartists = @listener.followartist_artists
       @favorite_posts = @listener.favorite_posts
     end
