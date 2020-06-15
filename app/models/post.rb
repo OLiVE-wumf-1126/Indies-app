@@ -9,5 +9,6 @@ class Post < ApplicationRecord
     favorites.where(listener_id: listener.id).exists?
   end
 
-  validates :youtube_url,:text,:title,          presence: true 
+  validates :youtube_url,          presence: true
+  validates :text,:title,          presence: true 
 end

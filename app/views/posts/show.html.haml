@@ -21,8 +21,12 @@
           = form_with model:[@post,@comment], local: true do |f|
             = f.text_field :comment, placeholder: "コメントする", class: "comment-input"
             = f.submit "SEND", class: "comment-submit"
+        - elsif artist_signed_in?
+          コメント一覧：
         - else
-          《 コメント一覧 》
+          ※コメントするにはリスナーログインが必要です
+          %br
+          コメント一覧：
       .show-post__content__comment--board
         - if @comments
           - @comments.each do |comment|

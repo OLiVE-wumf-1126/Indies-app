@@ -1,5 +1,6 @@
 class RelationshipsController < ApplicationController
   before_action :set_listener
+  before_action :listener_action
 
   def create
     following = current_listener.follow(@listener)
@@ -26,5 +27,9 @@ class RelationshipsController < ApplicationController
   private
   def set_listener
     @listener = Listener.find(params[:relationship][:follow_id])
+  end
+
+  def listener_action
+    redirect_to root_path unless listener_signed_in?
   end
 end
