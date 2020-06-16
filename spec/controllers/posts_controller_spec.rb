@@ -2,12 +2,13 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   describe "#index" do
-    it "正常なレスポンスか" do
+    # 正常なレスポンスが返ってきているか？
+    it "responds successfully" do
       get :index
       expect(response).to be_success
     end
-
-    it "200レスポンスが返ってくるか" do
+    # 200レスポンスが返ってきているか？
+    it "returns a 200 response" do
       get :index
       expect(response).to have_http_status "200"
     end
@@ -17,20 +18,20 @@ RSpec.describe PostsController, type: :controller do
     before do
       @post = create(:post)
     end
-
-    it "正常なレスポンスか" do
+    # 正常なレスポンスが返ってきているか？
+    it "responds successfully" do
       get :show, params: {id: @post.id}
       expect(response).to be_success
     end
-
-    it "200レスポンスが返ってくるか" do
+    # 200レスポンスが返ってきているか？
+    it "returns a 200 response" do
       get :show, params: {id: @post.id}
       expect(response).to have_http_status "200"
     end
   end
 
   describe "#new" do
-    context "as a guest user" do
+    context "artist未ログインの場合" do
       # 正常なレスポンスが返ってきていないか？
       it "does not respond successfully" do
         get :new
@@ -41,7 +42,7 @@ RSpec.describe PostsController, type: :controller do
         get :new
         expect(response).to have_http_status "302"
       end
-      # ログイン画面にリダイレクトされているか？
+      # root画面にリダイレクトされているか？
       it "redirects the page to /" do
         get :new
         expect(response).to redirect_to "/"
@@ -50,7 +51,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "#create" do
-    context "as a guest user" do
+    context "artist未ログインの場合" do
       # 正常なレスポンスが返ってきていないか？
       it "does not respond successfully" do
         post :create
@@ -61,7 +62,7 @@ RSpec.describe PostsController, type: :controller do
         post :create
         expect(response).to have_http_status "302"
       end
-      # ログイン画面にリダイレクトされているか？
+      # root画面にリダイレクトされているか？
       it "redirects the page to /" do
         post :create
         expect(response).to redirect_to "/"
@@ -70,7 +71,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "#edit" do
-    context "as a guest user" do
+    context "artist未ログインの場合" do
       before do
         @post = create(:post)
       end
@@ -84,7 +85,7 @@ RSpec.describe PostsController, type: :controller do
         get :edit, params: {id: @post.id}
         expect(response).to have_http_status "302"
       end
-      # top画面にリダイレクトされているか？
+      # root画面にリダイレクトされているか？
       it "redirects the page to /" do
         get :edit, params: {id: @post.id}
         expect(response).to redirect_to "/"
@@ -93,7 +94,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "#update" do
-    context "as a guest user" do
+    context "artist未ログインの場合" do
       before do
         @post = create(:post)
       end
@@ -107,7 +108,7 @@ RSpec.describe PostsController, type: :controller do
         patch :update, params: {id: @post.id}
         expect(response).to have_http_status "302"
       end
-      # top画面にリダイレクトされているか？
+      # root画面にリダイレクトされているか？
       it "redirects the page to /" do
         patch :update, params: {id: @post.id}
         expect(response).to redirect_to "/"
@@ -116,25 +117,20 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "#destroy" do
-    context "as a user not to login" do
-      # 各example(it〜end)の前に「@post」を作成
+    context "artist未ログインの場合" do
       before do
         @post = create(:post)
       end
     
       # 302レスポンスを返すこと
       it "returns a 302 response" do
-        # DELETEを@postに対して送信する
         delete :destroy, params: { id: @post.id }
-        # レスポンスのステータスが「302（失敗）」であることを確認
         expect(response).to have_http_status "302"
       end
 
-      # top画面にリダイレクトすること 
+      # root画面にリダイレクトすること 
       it "redirects to the sign-in page" do
-        # DELETEを@postに対して送信する
         delete :destroy, params: { id: @post.id }
-        # サインインページに遷移することを確認
         expect(response).to redirect_to "/"
       end
     end
