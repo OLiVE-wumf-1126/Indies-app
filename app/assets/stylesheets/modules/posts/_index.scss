@@ -4,12 +4,13 @@
   font-size: 20px;
   color: $title;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 60px;
   margin-left: 50px;
 }
 .index__top{
   height: 430px;
   width: 100%;
+  padding-top: 60px;
   @include back-ground-option ();
 }
 .index-content{
