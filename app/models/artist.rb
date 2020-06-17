@@ -15,7 +15,6 @@ class Artist < ApplicationRecord
 
   before_save { self.email = email.downcase }
   VALID_PASSWORD_REGEX =       /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,100}\z/i
-
   validates :artistname,          presence: true 
   validates :password, :password_confirmation,          allow_blank: true, format: { with: VALID_PASSWORD_REGEX }
 end
