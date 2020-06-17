@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :artist_action, except:[:index, :show]
+  before_action :artist_action, only:[:new, :create, :edit, :update, :destroy]
   before_action :listener_action, only:[:favoritesindex]
 
   def index
