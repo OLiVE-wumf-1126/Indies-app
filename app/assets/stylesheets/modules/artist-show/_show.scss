@@ -31,8 +31,9 @@
   }
 }
 .artist-show__content{
-  height: 1000px;
+  height: 100%;
   width: 100%;
+  display: flex;
   .artist-show__content__left{
     height: 500px;
     width: 350px;
@@ -72,8 +73,7 @@
   }
   .artist-show__content__right{
     width: 65%;
-    margin: 20px 40px 20px 0;
-    float: right;
+    margin: 20px 40px 20px auto;
     &__top{
       width: 100%;
       padding: 20px;
