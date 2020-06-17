@@ -1,0 +1,31 @@
+.post-create__content
+  .post-create__content--top
+    新規投稿
+  .post-create__content--main
+    = form_with model:@post, class: "post_form", local: true do |f|
+      .post-field
+        %label.post-field--title タイトル
+        %span.post-field--span 必須
+        %br 
+        = f.text_field :title, class: "post-field-input"
+        -if @post.errors.include?(:title)
+          %p.field-error= @post.errors.full_messages_for(:title).first
+      .post-field
+        %label.post-field--title YouTubeアドレス
+        %span.post-field--span 必須
+        %br 
+        = f.text_field :youtube_url, class: "post-field-input"
+        -if @post.errors.include?(:youtube_url)
+          %p.field-error= @post.errors.full_messages_for(:youtube_url).first
+      .post-field
+        %label.post-field--title タグ
+        = f.text_field :tag_list, value: @post.tag_list.join(','), class: "post-field-input"
+      .post-field
+        %label.post-field--title 動画説明文
+        %span.post-field--span 必須
+        %br
+        = f.text_area :text, class: "post-field-inputarea"
+        -if @post.errors.include?(:text)
+          %p.field-error= @post.errors.full_messages_for(:text).first
+      .actions
+        = f.submit "投稿する",class: "submit"

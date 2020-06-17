@@ -1,9 +1,0 @@
-- unless current_listener == listener
-  - if current_listener.following?(listener)
-    = form_for(current_listener.relationships.find_by(follow_id: listener.id), html: { method: :delete }) do |f|
-      = f.hidden_field :follow_id, value: listener.id
-      = f.submit 'フォロー中', class: 'follow-now'
-  - else
-    = form_for(current_listener.relationships.build) do |f|
-      = f.hidden_field :follow_id, value: listener.id
-      = f.submit 'フォロー', class: 'follows'

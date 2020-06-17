@@ -1,0 +1,31 @@
+.index-content__center
+  %ul.index-post__lists
+    - @posts.each do |post|
+      %li.index-post__content
+        .index-post__content--artistimage
+          = link_to "", post_path(post),class: "linkimg"
+          - if post.artist.artistimage?
+            = image_tag (post.artist.artistimage.url)
+          - else
+            = image_tag "/assets/default.png"
+        .index-post__content--artistname
+          = post.artist.artistname
+        .index-post__content--text
+          = post.text.truncate(35)
+        - if listener_signed_in?
+          .index-post__content--favorites
+            -if post.favorited_by?(current_listener)
+              = link_to "★#{post.favorites.count}", post_favorites_path(post.id), method: :delete
+            - else 
+              = link_to "☆#{post.favorites.count}", post_favorites_path(post.id), method: :post
+        - else
+          .index-post__content--favorites
+            - if post.favorites.count == 0
+              = "☆#{post.favorites.count}"
+            - else
+              = "★#{post.favorites.count}"
+        - if artist_signed_in? && current_artist.id == post.artist_id
+          .index-post__content--edit
+            = link_to "編集", edit_post_path(post)
+            = link_to "削除", post_path(post), method: :delete
+        %br
