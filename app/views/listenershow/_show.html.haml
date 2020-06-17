@@ -2,7 +2,7 @@
   .listener-show__title
     こんにちわ！
     %br
-    = @listener.nickname 
+    = current_listener.nickname 
     さん
   %ul.listener-show__menulist
     %li.listener-show__menulist--listeneredit
@@ -12,6 +12,6 @@
     %li.listener-show__menulist--followartists
       %a.toggle フォローアーティスト一覧
       %ul.followartists-name
-        - @followartists.each do |follower|
+        - current_listener.followartist_artists.each do |follower|
           %li= link_to "#{follower.artistname.truncate(10)}",artistshow_path(follower.id)
     
