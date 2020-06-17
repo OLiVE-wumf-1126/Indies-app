@@ -4,7 +4,7 @@
     - if params[:q]['text_cont'] == ""
       = "検索キーワードがありません。"
     - elsif @search_posts.present?
-      = "「#{params[:q][:text_cont]}」の検索結果: #{@search_posts.count}個"
+      = "「#{params[:q][:text_or_title_cont]}」の検索結果: #{@search_posts.count}個"
     - else
       = "検索に一致する投稿はありませんでした"
     %ul.index-post__lists
