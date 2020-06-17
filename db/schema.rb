@@ -78,16 +78,6 @@ ActiveRecord::Schema.define(version: 2020_06_14_182105) do
     t.index ["artist_id"], name: "index_posts_on_artist_id"
   end
 
-  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "listener_id"
-    t.bigint "follow_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["follow_id"], name: "index_relationships_on_follow_id"
-    t.index ["listener_id", "follow_id"], name: "index_relationships_on_listener_id_and_follow_id", unique: true
-    t.index ["listener_id"], name: "index_relationships_on_listener_id"
-  end
-
   create_table "taggings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
@@ -122,7 +112,5 @@ ActiveRecord::Schema.define(version: 2020_06_14_182105) do
   add_foreign_key "followartists", "artists"
   add_foreign_key "followartists", "listeners"
   add_foreign_key "posts", "artists"
-  add_foreign_key "relationships", "listeners"
-  add_foreign_key "relationships", "listeners", column: "follow_id"
   add_foreign_key "taggings", "tags"
 end
