@@ -9,22 +9,21 @@
 }
 .index__top{
   height: 430px;
-  width: 100%;
+  width: 100vw;
   padding-top: 60px;
   @include back-ground-option ();
 }
 .index-content{
-  height: 1000px;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
   &__center{
     padding-top: 20px;
     height: 100%;
-    width: 70%;
     margin-left: 50px;
     .index-post__lists{
-      height: 300px;
+      max-height: max-content;
       display: flex;
       flex-wrap: wrap;
       padding-left: 8px;
@@ -85,12 +84,8 @@
     }
   }
   &__right{
-    margin-top: 20px;
-    width: 25%;
+    margin: 20px 20px 0 0;
     height: 100%;
-    position: -webkit-sticky;
-    position: sticky;
-    top:0;
     &__listener-signedin{
       height: 200px;
       width: 300px;
