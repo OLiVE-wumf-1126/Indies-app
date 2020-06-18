@@ -21,6 +21,7 @@
   &__center{
     padding-top: 20px;
     height: 100%;
+    width: 70%;
     margin-left: 50px;
     .index-post__lists{
       max-height: max-content;
@@ -86,6 +87,7 @@
   &__right{
     margin: 20px 20px 0 0;
     height: 100%;
+    width: 25%;
     &__listener-signedin{
       height: 200px;
       width: 300px;
