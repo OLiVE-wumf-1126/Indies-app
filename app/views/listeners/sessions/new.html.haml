@@ -1,7 +1,8 @@
 .devise-registration
   .devise-registration__header
   .devise-registration__main
-    .devise-registration__main__top　ユーザーログイン
+    .devise-registration__main__top リスナーログイン
+    %p.sign-in__error=alert
     = form_for(resource, as: resource_name, url: session_path(resource_name),html: { class: "user__form" }) do |f|
       .field
         %label.field--title メールアドレス
