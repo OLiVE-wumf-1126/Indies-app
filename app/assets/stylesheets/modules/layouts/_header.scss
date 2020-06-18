@@ -11,9 +11,12 @@
   z-index: 10;
   margin-bottom: 60px;
   &--logo{
-    background-color: burlywood;
     height: 100%;
     width: 170px;
+    position: relative;
+    a{
+      @include all-link-option ();
+    }
   }
   &__menu{
     height: 100%;
@@ -35,10 +38,12 @@
     }
     &--right{
       height: 100%;
+      width: 300px;
       display: flex;
       color: white;
       ul.header__lists{
         width: 150px;
+        margin: 0 0 0 auto;
         text-align: center;
         li.dropdown-btn{
           line-height: 60px;
