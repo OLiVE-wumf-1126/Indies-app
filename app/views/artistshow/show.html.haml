@@ -36,6 +36,6 @@
           .artist-show__content__right__bottom__posts--text
             = link_to "#{post.text.truncate(106)}", post_path(@artist)
             %br
-            = post.created_at
+            = post.created_at.to_s(:datetime_jp) 
       .index-paginate
         = paginate(@posts)

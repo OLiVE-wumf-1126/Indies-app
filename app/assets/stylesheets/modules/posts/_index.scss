@@ -37,11 +37,17 @@
       flex-wrap: wrap;
       padding-left: 8px;
       .index-post__content{
-        height: 290px;
+        height: 300px;
         width: 292px;
         text-align: center;
         margin: 0 10px 10px 10px;
         padding: 10px;
+        &--time{
+          text-align: left;
+          font-size: 12px;
+          padding-left: 15px;
+          color: $text;
+        }
         &--artistimage{
           height: 152px;
           width: 252px;
