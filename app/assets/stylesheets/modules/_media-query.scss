@@ -1,0 +1,17 @@
+@mixin mediaSP {
+  @media screen and (min-width:480px) and (max-width:$break-pointSP) {
+    @content
+  }
+}
+
+@mixin mediaT {
+  @media screen and (min-width:$break-pointSP) and (max-width:$break-pointPC) {
+    @content
+  }
+}
+
+@mixin mediaPC {
+  @media screen and (min-width:$break-pointPC) {
+    @content
+  }
+}

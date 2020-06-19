@@ -1,6 +1,7 @@
 .post-create__content{
   height: 100%;
   width: 800px;
+  padding-top: 60px;
   font-size: 15px;
   margin: 0 auto;
   &--top{
@@ -34,6 +35,10 @@
         }
         label {
           text-align: center;
+        }
+        .tag-info{
+          display: inline;
+          color: $text;
         }
       }
       .actions{

@@ -1,10 +1,8 @@
 .header
   .header--logo
+    = link_to "", root_path
+    = image_tag "/assets/Uova-logo.png"
   .header__menu
-    .header__menu--left
-      %ul.header__left-lists
-        %li.header__left-lists--first
-          = link_to "seedについて", "#", class: "link"
     .header__menu--search
       = search_form_for @search, url: search_posts_path do |f|
         = f.text_field :text_or_title_cont , placeholder: "キーワード検索", class: 'search-input'
@@ -37,5 +35,5 @@
           %li.dropdown-btn
             %a.toggle 新規登録
             %ul.dropdown
-              %li= link_to "リスナー新規登録", new_listener_registration_path , class: "link"
-              %li= link_to "アーティスト新規登録", new_artist_registration_path , class: "link"
+              %li= link_to "リスナー登録", new_listener_registration_path , class: "link"
+              %li= link_to "アーティスト登録", new_artist_registration_path , class: "link"

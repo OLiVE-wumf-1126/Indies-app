@@ -4,16 +4,25 @@
   font-size: 20px;
   color: $title;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 80px;
+  margin-bottom: 30px;
   margin-left: 50px;
 }
 .index__top{
   height: 430px;
-  width: 100%;
+  width: 100vw;
+  padding-top: 60px;
   @include back-ground-option ();
+  .index__top--text{
+    color: white;
+    font-family: serif;
+    font-size: 45px;
+    font-weight: bold;
+    margin: 200px 0 0 20px;
+  }
 }
 .index-content{
-  height: 1000px;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -23,7 +32,7 @@
     width: 70%;
     margin-left: 50px;
     .index-post__lists{
-      height: 300px;
+      max-height: max-content;
       display: flex;
       flex-wrap: wrap;
       padding-left: 8px;
@@ -84,12 +93,9 @@
     }
   }
   &__right{
-    margin-top: 20px;
-    width: 25%;
+    margin: 20px 20px 0 0;
     height: 100%;
-    position: -webkit-sticky;
-    position: sticky;
-    top:0;
+    width: 25%;
     &__listener-signedin{
       height: 200px;
       width: 300px;
@@ -125,6 +131,40 @@
     }
     &__artist-signedin a{
       @include all-link-option ();
+    }
+    &__newartist{
+      height: 100%;
+      &--title{
+        margin-top: 20px;
+        text-align: center;
+      }
+      &--content{
+        height: 100%;
+        margin: 20px 0 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: scroll;
+        .newartist{
+          height: 125px;
+          width: 160px;
+          margin-bottom: 35px;
+          position: relative;
+          a{
+            @include all-link-option ();
+          }
+          &--image{
+            text-align: center;
+            img{
+              height: 100px;
+              width: 100px;
+              border-radius: 50px;
+            }
+          }
+          &--name{
+            text-align: center;
+          }
+        }
+      }
     }
   }
 }

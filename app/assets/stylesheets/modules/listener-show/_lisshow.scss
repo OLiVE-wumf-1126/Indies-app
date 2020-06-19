@@ -1,6 +1,5 @@
 .listener-show{
   height: 400px;
-  padding-left: 20px;
   .listener-show__title{
     color: $title;
     padding: 20px 0 20px 0;
@@ -46,7 +45,9 @@
       .followartists-name{
         height: 300px;
         overflow: scroll;
+        display:none;
         li{
+
           border-bottom: solid 1px $text;
           a{
             color: $text;
