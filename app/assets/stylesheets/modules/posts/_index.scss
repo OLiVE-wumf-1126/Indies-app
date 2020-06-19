@@ -131,5 +131,39 @@
     &__artist-signedin a{
       @include all-link-option ();
     }
+    &__newartist{
+      height: 100%;
+      &--title{
+        margin-top: 20px;
+        text-align: center;
+      }
+      &--content{
+        height: 100%;
+        margin: 20px 0 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: scroll;
+        .newartist{
+          height: 125px;
+          width: 160px;
+          margin-bottom: 35px;
+          position: relative;
+          a{
+            @include all-link-option ();
+          }
+          &--image{
+            text-align: center;
+            img{
+              height: 100px;
+              width: 100px;
+              border-radius: 50px;
+            }
+          }
+          &--name{
+            text-align: center;
+          }
+        }
+      }
+    }
   }
 }

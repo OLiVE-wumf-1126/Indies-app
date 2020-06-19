@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:artist).order("created_at DESC").page(params[:page]).per(9)
+    @artists = Artist.limit(10).order(" created_at DESC ")
   end
 
   def show

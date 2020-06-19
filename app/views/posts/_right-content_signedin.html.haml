@@ -6,3 +6,14 @@
   .artist-signedin--text
     アーティスト新規登録はこちら
   = link_to "", new_artist_registration_path
+.index-content__right__newartist
+  .index-content__right__newartist--title
+    新着アーティスト
+  .index-content__right__newartist--content
+    - @artists.each do |artist|
+      .newartist
+        =link_to "",artistshow_path(artist)
+        .newartist--image
+          = image_tag (artist.artistimage.url)
+        .newartist--name
+          = artist.artistname
