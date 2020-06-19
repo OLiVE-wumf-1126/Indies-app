@@ -12,6 +12,13 @@
   width: 100vw;
   padding-top: 60px;
   @include back-ground-option ();
+  .index__top--text{
+    color: white;
+    font-family: serif;
+    font-size: 45px;
+    font-weight: bold;
+    margin: 200px 0 0 20px;
+  }
 }
 .index-content{
   height: 100%;
