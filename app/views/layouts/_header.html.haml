@@ -3,10 +3,6 @@
     = link_to "", root_path
     = image_tag "/assets/Uova-logo.png"
   .header__menu
-    .header__menu--left
-      %ul.header__left-lists
-        %li.header__left-lists--first
-          = link_to "seedについて", "#", class: "link"
     .header__menu--search
       = search_form_for @search, url: search_posts_path do |f|
         = f.text_field :text_or_title_cont , placeholder: "キーワード検索", class: 'search-input'
