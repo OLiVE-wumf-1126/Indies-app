@@ -36,6 +36,10 @@
         label {
           text-align: center;
         }
+        .tag-info{
+          display: inline;
+          color: $text;
+        }
       }
       .actions{
         text-align: center;

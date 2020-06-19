@@ -20,6 +20,7 @@
       .post-field
         %label.post-field--title タグ
         = f.text_field :tag_list, value: @post.tag_list.join(','), class: "post-field-input"
+        %p.tag-info タグは,(カンマ)で区切ると複数設定できます
       .post-field
         %label.post-field--title 動画説明文
         %span.post-field--span 必須
