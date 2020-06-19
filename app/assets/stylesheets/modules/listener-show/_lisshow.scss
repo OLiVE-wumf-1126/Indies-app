@@ -45,7 +45,9 @@
       .followartists-name{
         height: 300px;
         overflow: scroll;
+        display:none;
         li{
+
           border-bottom: solid 1px $text;
           a{
             color: $text;
