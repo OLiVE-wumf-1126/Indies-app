@@ -2,6 +2,8 @@
   %ul.index-post__lists
     - @posts.each do |post|
       %li.index-post__content
+        .index-post__content--time
+          = post.created_at.to_s(:datetime_jp) 
         .index-post__content--artistimage
           = link_to "", post_path(post),class: "linkimg"
           - if post.artist.artistimage?
