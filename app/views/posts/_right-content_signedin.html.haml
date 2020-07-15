@@ -14,6 +14,9 @@
       .newartist
         =link_to "",artistshow_path(artist)
         .newartist--image
-          = image_tag (artist.artistimage.url)
+          - if artist.artistimage?
+            = image_tag (artist.artistimage.url)
+          - else
+            = image_tag "/assets/default.png"
         .newartist--name
           = artist.artistname
