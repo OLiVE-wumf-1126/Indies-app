@@ -21,3 +21,11 @@ end
     password: "abcd1234"
   )
 end
+
+Artist.all.each do |artist|
+  artist.posts.create!(
+  youtube_url: "https://www.youtube.com/watch?v=HB4QrJyWqEw",
+  text: "テスト投稿テキスト",
+  title: "テスト投稿"
+  )
+end
