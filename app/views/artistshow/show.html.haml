@@ -11,7 +11,7 @@
       - if @artist.artistimage?
         = image_tag (@artist.artistimage.url),size: "300x300"
       - else
-        = image_tag "/assets/default.png"
+        = image_tag "/images/default.png"
     %ul.artist-show__content__left__menulist
       %li= link_to "アーティスト情報編集", edit_artist_registration_path, class: "artist-show__menulist--edit" unless @artist != current_artist || current_listener
       %li= "フォロワー数：#{@artist.followartists.count}"

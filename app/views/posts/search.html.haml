@@ -1,4 +1,4 @@
-.index__top{ style: "background-image: url('/assets/top-image.jpg')"}
+.index__top{ style: "background-image: url('/images/top-image.jpg')"}
   .index__top--text
     全国のリスナーへ
     %br
@@ -21,7 +21,7 @@
             - if post.artist.artistimage?
               = image_tag (post.artist.artistimage.url)
             - else
-              = image_tag "/assets/default.png"
+              = image_tag "/images/default.png"
           .index-post__content--artistname
             = post.artist.artistname
           .index-post__content--text
@@ -41,11 +41,11 @@
     -if listener_signed_in?
       = render "listenershow/show", listener: @listener, followartists: @followartists
     - else
-      .index-content__right__listener-signedin{ style: "background-image: url('/assets/listener.jpg')"}
+      .index-content__right__listener-signedin{ style: "background-image: url('/images/listener.jpg')"}
         .listener-signedin--text
           リスナー新規登録はこちら
         = link_to "", new_listener_registration_path
-      .index-content__right__artist-signedin{ style: "background-image: url('/assets/artist.jpg')"}
+      .index-content__right__artist-signedin{ style: "background-image: url('/images/artist.jpg')"}
         .artist-signedin--text
           アーティスト新規登録はこちら
         = link_to "", new_artist_registration_path

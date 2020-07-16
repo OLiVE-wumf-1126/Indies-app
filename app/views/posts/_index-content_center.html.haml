@@ -9,7 +9,7 @@
           - if post.artist.artistimage?
             = image_tag (post.artist.artistimage.url)
           - else
-            = image_tag "/assets/default.png"
+            = image_tag "/images/default.png"
         .index-post__content--artistname
           = post.artist.artistname
         .index-post__content--text
