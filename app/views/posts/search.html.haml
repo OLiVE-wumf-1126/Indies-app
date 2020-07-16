@@ -1,4 +1,8 @@
 .index__top{ style: "background-image: url('/assets/top-image.jpg')"}
+  .index__top--text
+    全国のリスナーへ
+    %br
+    あなたのライブをお届けします
 .index-content
   .index-content__center
     - if params[:q]['text_cont'] == ""
@@ -10,6 +14,8 @@
     %ul.index-post__lists
       - @search_posts.each do |post|
         %li.index-post__content
+          .index-post__content--time
+            = post.created_at.to_s(:datetime_jp)
           .index-post__content--artistimage
             = link_to "", post_path(post)
             - if post.artist.artistimage?
