@@ -39,7 +39,6 @@ class Artists::RegistrationsController < Devise::RegistrationsController
   # end
 
   # protected
-  
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -48,7 +47,7 @@ class Artists::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:artistname, :email, :artistimage, :profile])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[artistname email artistimage profile])
   end
 
   # The path used after sign up.

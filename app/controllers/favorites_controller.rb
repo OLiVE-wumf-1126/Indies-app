@@ -14,8 +14,8 @@ class FavoritesController < ApplicationController
   end
 
   private
+
   def listener_action
     redirect_back(fallback_location: root_path) unless listener_signed_in?
   end
-
 end

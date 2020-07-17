@@ -1,7 +1,6 @@
 FactoryBot.define do
-
   factory :comment do
-    comment {"コメントです"}
+    comment { 'コメントです' }
     association :post
     association :listener
   end
