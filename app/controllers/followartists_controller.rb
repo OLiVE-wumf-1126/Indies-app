@@ -1,6 +1,6 @@
 class FollowartistsController < ApplicationController
   def create
-    followartist = Followartist.create(artist_id: params[:artistshow_id], listener_id: current_listener.id)
+    Followartist.create(artist_id: params[:artistshow_id], listener_id: current_listener.id)
     redirect_back(fallback_location: root_path)
   end
 
@@ -9,5 +9,4 @@ class FollowartistsController < ApplicationController
     followartist.destroy
     redirect_back(fallback_location: root_path)
   end
-
 end

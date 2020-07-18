@@ -42,7 +42,7 @@
         - if @post.artist.artistimage?
           = image_tag (@post.artist.artistimage.url)
         - else
-          = image_tag "/assets/default.png"
+          = image_tag "/images/default.png"
       .show-post__content__artist--date
         = "フォロワー数：#{@post.artist.followartists.count}"
       - if listener_signed_in?

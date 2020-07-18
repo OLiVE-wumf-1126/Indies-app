@@ -1,16 +1,15 @@
 class Listener::ParameterSanitizer < Devise::ParameterSanitizer
-  
   def initialize(*)
     super
-    permit(:sign_up, keys: [:nickname, :email])
-    permit(:account_update, keys: [:nickname, :email, :profile])
+    permit(:sign_up, keys: %i[nickname email])
+    permit(:account_update, keys: %i[nickname email profile])
   end
 end
 class Artist::ParameterSanitizer < Devise::ParameterSanitizer
   def initialize(*)
     super
-    permit(:sign_up, keys: [:artistname, :email, ])
-    permit(:account_update, keys: [:artistname, :email, :artistimage, :profile])
+    permit(:sign_up, keys: %i[artistname email])
+    permit(:account_update, keys: %i[artistname email artistimage profile])
   end
 end
 class ApplicationController < ActionController::Base
@@ -27,8 +26,8 @@ class ApplicationController < ActionController::Base
   end
 
   def set_search
-    @search = Post.ransack(params[:q]) #ransackの検索メソッド
-    @search_posts = @search.result(distinct: true).order(created_at: "DESC").includes(:artist).page(params[:page]).per(5) # productsの検索結果一覧 
+    @search = Post.ransack(params[:q])
+    @search_posts = \
+      @search.result(distinct: true).order(created_at: 'DESC').includes(:artist).page(params[:page]).per(9)
   end
-
 end
