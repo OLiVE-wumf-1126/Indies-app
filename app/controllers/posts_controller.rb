@@ -9,10 +9,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    if listener_signed_in?
-      @comment = Comment.new
-      @comments = @post.comments.includes(:listener)
-    end
+    @comment = Comment.new
+    @comments = @post.comments.includes(:listener)
   end
 
   def new

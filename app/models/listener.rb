@@ -4,11 +4,11 @@ class Listener < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :followartists
+  has_many :followartists, dependent: :destroy
   has_many :followartist_artists, through: :followartists, source: :artist
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :favorite_posts, through: :favorites, source: :post
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   before_save { self.email = email.downcase }
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,100}\z/i.freeze

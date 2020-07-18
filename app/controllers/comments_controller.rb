@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :listener_action
 
   def create
-    comment = Comment.create(comment_params)
+    Comment.create(comment_params)
     redirect_back(fallback_location: root_path)
   end
 

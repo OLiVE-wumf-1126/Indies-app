@@ -26,7 +26,8 @@ class ApplicationController < ActionController::Base
   end
 
   def set_search
-    @search = Post.ransack(params[:q]) # ransackの検索メソッド
-    @search_posts = @search.result(distinct: true).order(created_at: 'DESC').includes(:artist).page(params[:page]).per(5) # productsの検索結果一覧
+    @search = Post.ransack(params[:q])
+    @search_posts = \
+      @search.result(distinct: true).order(created_at: 'DESC').includes(:artist).page(params[:page]).per(9)
   end
 end

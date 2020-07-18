@@ -4,8 +4,8 @@ class Artist < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :posts
-  has_many :followartists
+  has_many :posts, dependent: :destroy
+  has_many :followartists, dependent: :destroy
 
   mount_uploader :artistimage, ImageUploader
 
