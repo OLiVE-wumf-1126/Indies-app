@@ -71,6 +71,8 @@
         height: 440px;
         margin-top: 10px;
         font-size: 15px;
+        overflow: scroll;
+        overflow-wrap: break-word;
         .board--nickname{
           color: $title;
         }
