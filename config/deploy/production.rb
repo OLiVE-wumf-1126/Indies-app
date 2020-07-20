@@ -1,4 +1,4 @@
-server "54.168.251.188/", user: "kondooo", roles: %w{app db web}
+server "54.168.251.188", user: "ec2-user", roles: %w{app db web}
 #serverのIPと、ログイン可能なuser名を記載してください
 
 
