@@ -1,40 +1,50 @@
-lock '3.12.0'
+lock '3.14.1'
 
 set :application, 'indies-app'
-#アプリ名を記載
+
 set :repo_url, 'git@github.com:OLiVE-wumf-1126/indies-app.git'
-#cloneを行うリモートリポジトリを記載
-#ただし、configファイルでgithub.com→githubとして置き換えられているので注意
 
-set :rbenv_type, :user
-set :rbenv_ruby, '2.5.3'
-set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-set :rbenv_roles, :all
-
-set :log_level, :warn
-
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
-
+set :branch, 'master'
+set :deploy_to, '/var/www/rails'
+set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+set :keep_releases, 5
+set :rbenv_ruby, '2.5.3'
 
-set :keep_releases, 3
-
-set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"
-
-set :unicorn_config_path, -> { File.join(current_path, "config", "unicorn.rb") }
+set :log_level, :debug
 
 namespace :deploy do
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-
-    end
-  end
-end
-
-after 'deploy:publishing', 'deploy:restart'
-namespace :deploy do
+  desc 'Restart application'
   task :restart do
     invoke 'unicorn:restart'
+  end
+
+  desc 'Create database'
+  task :db_create do
+    on roles(:db) do |host|
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:create'
+        end
+      end
+    end
+  end
+
+  desc 'Run seed'
+  task :seed do
+    on roles(:app) do
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:seed'
+        end
+      end
+    end
+  end
+
+  after :publishing, :restart
+
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+    end
   end
 end
