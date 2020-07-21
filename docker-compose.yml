@@ -16,6 +16,7 @@ services:
     tty: true
     volumes:
       - .:/app_name
+      - ~/.ssh:/tmp/ssh_dir
     ports:
       - "3000:3000"
     links:
