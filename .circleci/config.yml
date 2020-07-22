@@ -6,11 +6,11 @@ jobs:
       - image: circleci/ruby:2.5.3
         environment:
           RAILS_ENV: test
+          DB_HOST: 127.0.0.1
       - image: circleci/mysql:5.7
         environment:
-          MYSQL_HOST: 'db'
-          MYSQL_ALLOW_EMPTY_PASSWORD: true
-          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_USER: 'root'
+          MYSQL_ROOT_PASSWORD: 'password'
           MYSQL_DATABASE: app_name_test
     working_directory: ~/repo
     steps:
