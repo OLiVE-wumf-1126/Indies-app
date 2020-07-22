@@ -31,7 +31,16 @@ jobs:
       - run: 
           name: rubocop test
           command: rubocop
-
+      - add_ssh_keys:
+          fingerprints:
+            - '80:86:5f:6a:85:ae:e8:de:98:80:f3:65:ce:36:92:70'
+      - deploy:
+          name: Capistrano deploy
+          command: |
+            if [ "${CIRCLE_BRANCH}" != "master" ]; then
+              exit 0
+            fi
+            bundle exec cap production deploy
 workflows:
   version: 2
   workflows:
