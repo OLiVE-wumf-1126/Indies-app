@@ -7,25 +7,25 @@
         %label.post-field--title タイトル
         %span.post-field--span 必須
         %br 
-        = f.text_field :title, class: "post-field-input"
+        = f.text_field :title, placeholder: "投稿のタイトルを入力したください", class: "post-field-input"
         -if @post.errors.include?(:title)
           %p.field-error= @post.errors.full_messages_for(:title).first
       .post-field
         %label.post-field--title YouTubeアドレス
         %span.post-field--span 必須
         %br 
-        = f.text_field :youtube_url, class: "post-field-input"
+        = f.text_field :youtube_url, placeholder: "例）https://www.youtube.com/watch?v=***********", class: "post-field-input"
         -if @post.errors.include?(:youtube_url)
           %p.field-error= @post.errors.full_messages_for(:youtube_url).first
       .post-field
         %label.post-field--title タグ
-        = f.text_field :tag_list, value: @post.tag_list.join(','), class: "post-field-input"
+        = f.text_field :tag_list, placeholder: "例）ロック,ハードロック", value: @post.tag_list.join(','), class: "post-field-input"
         %p.tag-info タグは,(カンマ)で区切ると複数設定できます
       .post-field
         %label.post-field--title 動画説明文
         %span.post-field--span 必須
         %br
-        = f.text_area :text, class: "post-field-inputarea"
+        = f.text_area :text, placeholder:"説明文を入力したください", class: "post-field-inputarea"
         -if @post.errors.include?(:text)
           %p.field-error= @post.errors.full_messages_for(:text).first
       .actions
