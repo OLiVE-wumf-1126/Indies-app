@@ -28,8 +28,8 @@ jobs:
           name: rspec test
           command: bundle exec rspec
       - run: 
-        name: rubocop test
-        command: rubocop
+          name: rubocop test
+          command: rubocop
 
 workflows:
   version: 2
