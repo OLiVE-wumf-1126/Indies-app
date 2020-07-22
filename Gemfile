@@ -40,6 +40,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'pry-rails'
@@ -49,16 +53,12 @@ group :development, :test do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec'
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
 end
 
 group :production, :staging do
   gem 'unicorn'
 end
-#circleci ERROR Measures
+# circleci ERROR Measures
 gem 'therubyracer'
 
 group :development do
@@ -80,17 +80,17 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'acts-as-taggable-on', '~> 6.0'
+gem 'bcrypt_pbkdf'
 gem 'carrierwave'
 gem 'devise'
+gem 'ed25519'
 gem 'font-awesome-sass'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'mini_magick'
+gem 'net-ssh'
 gem 'rails-i18n'
 gem 'ransack'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'net-ssh'
-gem 'ed25519'
-gem 'bcrypt_pbkdf'
