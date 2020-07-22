@@ -18,6 +18,11 @@ AllCops:
     - 'spec/**/*'
     - !ruby/regexp /old_and_unused\.rb$/
 
+Metrics/BlockLength:
+  Exclude:
+    - 'rspec/**/*'
+    - 'lib/capistrano/tasks/*'
+
 # 日本語でのコメントを許可
 AsciiComments:
   Enabled: false
