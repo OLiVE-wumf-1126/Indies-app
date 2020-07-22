@@ -58,6 +58,8 @@ end
 group :production, :staging do
   gem 'unicorn'
 end
+#circleci ERROR Measures
+gem 'therubyracer'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
