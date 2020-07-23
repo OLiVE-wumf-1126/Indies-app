@@ -5,7 +5,7 @@ set :application, 'indies-app'
 set :repo_url, 'git@github.com:OLiVE-wumf-1126/indies-app.git'
 
 set :branch, 'master'
-set :deploy_to, '/var/www/rails'
+set :deploy_to, '/var/www/indies-app'
 set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 set :keep_releases, 5
