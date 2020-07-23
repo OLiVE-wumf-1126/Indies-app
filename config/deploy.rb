@@ -1,4 +1,4 @@
-lock '3.14.1'
+lock '3.4.0'
 
 set :application, 'indies-app'
 

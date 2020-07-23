@@ -54,3 +54,4 @@ production:
   username: root
   password: araisoolive
   socket: /var/lib/mysql/mysql.sock
+  host: indies-app-mysql.calrlgub2bkk.ap-northeast-1.rds.amazonaws.com
