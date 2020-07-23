@@ -53,4 +53,4 @@ production:
   database: indiesapp_production
   username: root
   password: araisoolive
-  host: indies-app-mysql.calrlgub2bkk.ap-northeast-1.rds.amazonaws.com
+  socket: /var/lib/mysql/mysql.sock
