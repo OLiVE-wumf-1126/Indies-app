@@ -1,24 +1,40 @@
-# README
+# アプリ名： Uova
+Youtubeに投稿されたインディーズアーティストの音楽、ライブ動画等を共有するサービスです
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# なぜこのサービスを作ったか
+この世界の状況で大打撃を受けている業界の１つとして音楽業界があり、その中でも普段あまり目に耳にする事のないインディーズアーティストに注目しました。
+特にライブ活動におけるファンとのコミュニケーションの場が失われていると考え、Youtubeを通した形ではありますが、音楽が好きという事もありライブ動画投稿・様々なインディーズアーティストを見つけるためのサービスを作成しました。
 
-Things you may want to cover:
+# 使用技術
+- Ruby2.5.3
+- Rails 5.2.2
+- JavaScript (jQuery)
+- AWS (EC2, RDS for MySQL, VPC, Route53, ALB)
+- Docker/docker-compose
+- CircleCI
+- Nginx, Unicorn
+- RSpec
+- Git, GitHub
+- Rubocop
 
-* Ruby version
 
-* System dependencies
+# 機能一覧
+- 投稿のキーワード検索機能
+- ページネーション機能
+- トップページ新着アーティスト一覧表示機能
+- ユーザログイン・登録機能（アーティスト・リスナー）
+### アーティスト登録時
+- 動画投稿のCRUD機能(タイトル・YouTube動画・タグ・投稿説明文)
+- アーティストプロフィール登録・編集機能(アーティスト写真・プロフィール文・過去投稿一覧表示)
 
-* Configuration
+### リスナー登録時
+- 投稿のいいね機能
+- いいねした投稿の一覧表示機能
+- アーティストのフォロー機能
+- フォローしたアーティストの一覧表示機能
+- 投稿へのコメント機能
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 開発で意識したこと
+- なるべく見やすいUIデザインにする事を心がけました。
+- githubでプルリクエストなどを活用しチーム開発になるべく近づけるよう心がけました。
+- 興味のあったAWS・Dockerといった技術を組み込むことを意識した。
